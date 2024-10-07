@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import IntenerestCalculator from './components/IntenerestCalculator';
+import IntenerestCalculator from './Calculator/IntenerestCalculator';
 function App() {
   return (
     <>
