@@ -1,14 +1,14 @@
 import React from 'react';
 import './App.css';
 import IntenerestCalculator from './components/IntenerestCalculator';
-import SelectInteres from './components/SelectInteres';
+import TablaFinsus from './components/TablaFinsus';
 
 
 function App() {
   return (
     <>
       <IntenerestCalculator />
-      <SelectInteres/>
+      <TablaFinsus/>
     </>
 
     
