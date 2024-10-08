@@ -1,12 +1,29 @@
-import React from 'react';
+
+import React, { useState } from 'react';
+import Dropdown from './Select';
+import { interestOptions, timeOptions } from './constants'; 
 import '../App.css';
 
-export default function IntenerestCalculator() {
+const InterestCalculator = () => {
+  const [selectedInterest, setSelectedInterest] = useState(null); 
+  const [selectedTime, setSelectedTime] = useState(null); 
+
   return (
     <div>
-      <h2 className="subtitle">
-        Descubre cómo el interés compuesto hace su magia*
-      </h2>
+      <Dropdown 
+        label="Selecciona el tiempo que estará invertido tu dinero:"
+        options={interestOptions}
+        selectedOption={selectedInterest}
+        onOptionSelect={setSelectedInterest}
+      />
+      <Dropdown 
+        label="Selecciona el tipo de plazo:"
+        options={timeOptions}
+        selectedOption={selectedTime}
+        onOptionSelect={setSelectedTime}
+      />
     </div>
   );
-}
+};
+
+export default InterestCalculator;
