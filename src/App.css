@@ -2,69 +2,157 @@
   max-width: 1280px;
   margin: 0 auto;
   padding: 2rem;
-  text-align: center;
-}
-
-
-.main-grid {
-  font-size: 900px;
+  text-align: left;
+  justify-content: flex-start;
 }
 
 .subtitle {
   font-size: 2.1rem;
   font-weight: 600;
   color: #ff5f54;
-<<<<<<< HEAD
+/* <<<<<<< HEAD */
 }
 
 
 
-=======
+/* =======
   margin-left: 80px;
-  margin-bottom: 20px;
-}
+  margin-bottom: 120px;
+} */
 
-.calculator-container {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  margin-left: 80px;
-}
-
-.instruction-text {
-  font-size: 0.9em;
-  margin-bottom: 12px;
-}
-
-.input-wrapper {
+.select-container {
   position: relative;
-  width: 200px;
+  width: 700px;
+  margin: 0 auto;
+  margin-bottom: 30px;
 }
 
-.currency {
+.select-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 12px;
+  background-color: white;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s, border-color 0.3s;
+  font-size: 16px;
+}
+
+.select-header.active {
+  border-color: #007bff;
+}
+
+.select-options {
   position: absolute;
-  left: 20px;
-  top: 50%;
-  transform: translateY(-50%);
-  font-size: 1em;
-  color: #646cff;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background-color: white;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  z-index: 1;
 }
 
-.input-field {
-  padding: 10px 10px 10px 30px;
-  font-size: 1em;
-  border: 2px solid #ccc;
-  border-radius: 5px;
-  width: 750px;
+.select-option, .selected-option {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 12px;
+  cursor: pointer;
   text-align: left;
 }
 
-.input-field::placeholder {
-  color: #ccc;
+.select-option:hover {
+  background-color: #f0f0f0;
 }
 
-.input-field:focus {
-  border-color: #535bf2;
-  outline: none;
+.select-icon {
+  color: #ff5f54;
+  transition: transform 0.3s;
+  margin-left: auto;
 }
->>>>>>> bc73204caee7eb33e32c1dda2dbfe88effd1ffbc
+
+.select-icon.rotate {
+  transform: rotate(180deg);
+}
+
+.option-time {
+  flex: 1;
+  text-align: left; 
+}
+
+.option-percentage {
+  flex: 0;
+  color: #ff5f54;
+  text-align: right; 
+  margin-right: 16px; 
+}
+
+.select-icon {
+  color: #ff5f54;
+  transition: transform 0.3s;
+  margin-left: auto;
+  margin-right: 8px;
+}
+
+.input-field {
+  border: none;
+  outline: none;
+/* <<<<<<< HEAD */
+}
+/* >>>>>>> bc73204caee7eb33e32c1dda2dbfe88effd1ffbc
+=======
+  flex: 1; 
+  font-size: 16px;
+}
+>>>>>>> 549295f77867552aa244902f3dbfd500f5def8e1 */
+
+
+
+.interest{
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+  width: 100%;
+  margin: 0%;
+}
+
+.cards-container{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  /* height: 500px; */
+}
+
+.card{
+  display: flex;
+  flex-direction: column;
+  align-items: center;   
+  justify-content: center;
+  height: 40%;
+  width: 30%;
+  background-color: white;
+  /*border: 1px solid #000000;*/
+  box-shadow: 0px 0px 23px 0px rgba(0,0,0,0.1);
+  border-radius: 10%;
+  margin: 10px;
+  padding-left: 5px;
+  padding-right: 5px;
+
+  div{
+      margin-top: 5%;
+  }
+}
+
+.card-header{
+  text-align: center;
+}
+.card-body{
+  text-align: center;
+}
+
+
+
+
