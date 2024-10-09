@@ -1,5 +1,7 @@
 import React from 'react';
 import CalculatorInput from './components/calculatorInput';
+import TablaFinsus from './components/TablaFinsus';
+
 import '../App.css';
 
 export default function IntenerestCalculator() {
@@ -9,6 +11,7 @@ export default function IntenerestCalculator() {
         Descubre cómo el interés compuesto hace su magia*
       </h2>
       <CalculatorInput />
+      <TablaFinsus />
     </div>
   );
 }
