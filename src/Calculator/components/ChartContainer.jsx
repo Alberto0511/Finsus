@@ -98,7 +98,7 @@ const ChartContainer = () => {
   }, []);
 
   return (
-    <div>
+    <div className="chart-container">
       <InterestChart data={chartData} />
     </div>
   );

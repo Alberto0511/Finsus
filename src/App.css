@@ -1,8 +1,8 @@
 #root {
-  max-width: 1280px;
+  max-width: 100%;
   margin: 0 auto;
   padding: 2rem;
-  text-align: left;
+  text-align: left
 }
 
 .subtitle {
@@ -98,6 +98,12 @@
   font-size: 16px;
 }
 
+.chart-container {
+  margin-top: 50px;
+  width: 100%;
+  max-width: 100%;
+  margin: 0 auto;
+}
 
 .custom-tooltip {
   background-color: white;
@@ -120,6 +126,7 @@
   align-items: center;
   justify-content: flex-start;
 }
+
 
 .recharts-legend-item .recharts-legend-icon {
   width: 16px;

@@ -3,7 +3,7 @@ import Dropdown from './components/Select';
 import InputNum from './components/Input';
 import Table from './components/Table';
 import { interestOptions, timeOptions } from './models/constants';
-import '../App.css';
+
 import ChartContainer from './components/ChartContainer';
 
 const InterestCalculator = () => {
