@@ -49,7 +49,8 @@
   z-index: 1;
 }
 
-.select-option, .selected-option {
+.select-option,
+.selected-option {
   display: flex;
   justify-content: space-between;
   padding: 8px 12px;
@@ -73,14 +74,14 @@
 
 .option-time {
   flex: 1;
-  text-align: left; 
+  text-align: left;
 }
 
 .option-percentage {
   flex: 0;
   color: #ff5f54;
-  text-align: right; 
-  margin-right: 16px; 
+  text-align: right;
+  margin-right: 16px;
 }
 
 .select-icon {
@@ -93,6 +94,35 @@
 .input-field {
   border: none;
   outline: none;
-  flex: 1; 
+  flex: 1;
   font-size: 16px;
+}
+
+
+.custom-tooltip {
+  background-color: white;
+  border: 1px solid #ccc;
+  padding: 10px;
+  border-radius: 4px;
+  font-size: 18px;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+  display: flex;
+  align-items: center;
+}
+
+.custom-tooltip img {
+  margin-right: 8px;
+}
+
+/* Personalización de la leyenda */
+.recharts-legend-item {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.recharts-legend-item .recharts-legend-icon {
+  width: 16px;
+  height: 16px;
+  margin-right: 15px;
 }
