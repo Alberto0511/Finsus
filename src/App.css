@@ -2,18 +2,22 @@
   max-width: 1280px;
   margin: 0 auto;
   padding: 2rem;
-  text-align: center;
+  text-align: left;
 }
 
 .subtitle {
-  font-size: 1.5rem;
+  font-size: 2.1rem;
+  font-weight: 600;
   color: #ff5f54;
+  margin-left: 80px;
+  margin-bottom: 120px;
 }
 
 .select-container {
   position: relative;
   width: 700px;
   margin: 0 auto;
+  margin-bottom: 30px;
 }
 
 .select-header {
@@ -30,10 +34,7 @@
 }
 
 .select-header.active {
-  border-color: #92d3e4;
-  border-width: 2px;
-  border-style: solid;
-  
+  border-color: #007bff;
 }
 
 .select-options {
@@ -64,7 +65,6 @@
   color: #ff5f54;
   transition: transform 0.3s;
   margin-left: auto;
-  margin-right: 8px;
 }
 
 .select-icon.rotate {
@@ -83,11 +83,16 @@
   margin-right: 16px; 
 }
 
-.select-label {
-  font-weight: 400;
+.select-icon {
+  color: #ff5f54;
+  transition: transform 0.3s;
+  margin-left: auto;
+  margin-right: 8px;
+}
+
+.input-field {
+  border: none;
+  outline: none;
+  flex: 1; 
   font-size: 16px;
-  margin-bottom: 8px;
-  display: block;
-  color: #23223F;
-  text-align: left;
 }
