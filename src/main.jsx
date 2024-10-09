@@ -1,6 +1,6 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
-import InterestCalculatorV2 from './components/InterestCalculator.jsx'
+import InterestCalculatorV2 from './Calculator/components/InterestCalculator.jsx'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>

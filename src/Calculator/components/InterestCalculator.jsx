@@ -1,5 +1,5 @@
 import React from "react";
-import "../App.css";
+import "../../App.css";
 import "./calculator.css"
 
 export default function IntenerestCalculator() {
@@ -12,7 +12,7 @@ export default function IntenerestCalculator() {
       </div>
 
       <div className="container">
-        <div>
+        <div className="form">
 
             <div className="form-div">
               <label>Ingresa con cuánto dinero podrías hacer tu primera inversión:</label>
