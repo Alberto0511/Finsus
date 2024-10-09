@@ -6,9 +6,8 @@ function App() {
     <>
       <IntenerestCalculator />
     </>
-    
+
   );
 }
 
 export default App;
-
