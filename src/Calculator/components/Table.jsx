@@ -2,30 +2,38 @@ import React from 'react';
 
 export default function TablaFinsus() {
   const tableFinsusStyle = {
-    width: '0 auto',
+    width: '100%',
     margin: '20px auto',
     borderCollapse: 'collapse',
     textAlign: 'left',
     borderRadius: '20px',
-    boxShadow: '5px 10px 10px rgba(0, 0, 0, 0.1)',
+    boxShadow: '10px 10px 10px 10px rgba(0, 0, 0, 0.1)',
+    fontSize: '14px',
+  };
+
+  const divWidthFinsus = {
+    width: '100%',
   };
 
   const thFinsusStyle = {
     padding: '20px',
     backgroundColor: '#23223F',
     color: '#FFFFFF',
+    textAlign: 'center',
   };
 
   const th2FinsusStyle = {
     padding: '20px',
     backgroundColor: '#ff5f54',
     color: '#FFFFFF',
+    textAlign: 'center',
   };
 
   const th3FinsusStyle = {
     padding: '20px',
     backgroundColor: '#FFFFF',
     borderTopLeftRadius: '20px',
+    textAlign: 'center',
   };
 
   const th4FinsusStyle = {
@@ -33,6 +41,7 @@ export default function TablaFinsus() {
     backgroundColor: '#23223F',
     color: '#FFFFFF',
     borderTopRightRadius: '20px',
+    textAlign: 'center',
   };
 
   const tdFinsusStyle = {
@@ -53,7 +62,7 @@ export default function TablaFinsus() {
   };
 
   return (
-    <div>
+    <div style={divWidthFinsus}>
       <table style={tableFinsusStyle}>
         <tr>
           <th style={th3FinsusStyle}></th>
