@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import Catalogs from "./models/catalog";
+import Catalogs from "../models/catalog";
 
 function InvestmentCalculator() {
   useEffect(() => {
