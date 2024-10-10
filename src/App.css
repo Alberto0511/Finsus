@@ -230,39 +230,37 @@
   box-shadow: 10px 0px 3px rgba(255, 95, 84, 0.8);
 }
 
-.chart-container {
-  margin-top: 50px;
-  width: 100%;
-  max-width: 100%;
-  margin: 0 auto;
-}
-
-.custom-tooltip {
-  background-color: var(--blanco);
-  border: 1px solid #ccc;
-  padding: 10px;
-  border-radius: 4px;
-  font-size: 18px;
-  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
-  display: flex;
-  align-items: center;
-}
-
-.custom-tooltip img {
-  margin-right: 8px;
-}
-
+/* Comienza estilos de grafica */
 /* Personalización de la leyenda */
 .recharts-legend-item {
   display: flex;
-  align-items: center;
-  justify-content: flex-start;
+  padding-left: 60px;
 }
 
 .recharts-legend-item .recharts-legend-icon {
   width: 16px;
   height: 16px;
-  margin-right: 15px;
+  margin-left: 15px;
+}
+
+/* Contenedor del gráfico */
+.chart-container {
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Tooltip personalizado */
+.custom-tooltip {
+  background-color: var(--rojo-finsus);
+  border: 1px solid #ccc;
+  padding: 10px;
+  color: white;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 @media (max-width: 768px) {

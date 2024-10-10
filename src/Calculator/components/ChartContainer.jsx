@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import '../../App.css';
 import {
   LineChart,
   Line,
@@ -11,6 +10,7 @@ import {
   ResponsiveContainer,
 } from 'recharts';
 import StartTruckIcon from '../../public/StartTruckIcon.svg';
+import '../../App.css'; // Asegúrate de que los estilos están en App.css
 
 const CustomTooltip = ({ active, payload }) => {
   if (active && payload && payload.length) {
@@ -22,58 +22,64 @@ const CustomTooltip = ({ active, payload }) => {
           width={40}
           height={40}
         />
-        <p>{`Ganancia: ${payload[0].value}`}</p>
+        <p>{`Ganancia: ${payload[0].value.toLocaleString(undefined, {
+          minimumFractionDigits: 2,
+          maximumFractionDigits: 2,
+        })}`}</p>
       </div>
     );
   }
 
   return null;
 };
+
 const InterestChart = ({ data }) => {
   return (
     <ResponsiveContainer width="100%" height={400}>
       <LineChart data={data}>
         <CartesianGrid strokeDasharray="3 3" />
         <XAxis dataKey="name" />
-        <YAxis />
+        <YAxis
+          tickFormatter={(value) =>
+            `$${value.toLocaleString(undefined, {
+              minimumFractionDigits: 2,
+              maximumFractionDigits: 2,
+            })}`
+          }
+        />
         <Tooltip content={<CustomTooltip />} />
         <Legend
           layout="vertical"
           align="right"
           verticalAlign="bottom"
-          wrapperStyle={{ marginLeft: 40 }}
+          wrapperStyle={{ marginLeft: 60 }}
           iconType="circle"
-          formatter={() => null}
         />
         <Line
           type="monotone"
           dataKey="compuesto"
           stroke="#FF0000"
-          dot={({ index }) =>
-            index === data.length - 1 ? <circle r={6} /> : null
-          }
+          dot={{ r: 6, stroke: '#FF0000', strokeWidth: 2, fill: 'white' }}
+          activeDot={{ r: 8, stroke: '#FF0000', strokeWidth: 2, fill: 'white' }}
         />
         <Line
           type="monotone"
           dataKey="simple"
           stroke="#00008B"
-          dot={({ index }) =>
-            index === data.length - 1 ? <circle r={6} /> : null
-          }
+          dot={{ r: 6, stroke: '#00008B', strokeWidth: 2, fill: 'white' }}
+          activeDot={{ r: 8, stroke: '#00008B', strokeWidth: 2, fill: 'white' }}
         />
         <Line
           type="monotone"
           dataKey="montoInicial"
           stroke="#808080"
-          dot={({ index }) =>
-            index === data.length - 1 ? <circle r={6} /> : null
-          }
+          dot={{ r: 6, stroke: '#808080', strokeWidth: 2, fill: 'white' }}
+          activeDot={{ r: 8, stroke: '#808080', strokeWidth: 2, fill: 'white' }}
         />
       </LineChart>
     </ResponsiveContainer>
   );
 };
-
 const ChartContainer = () => {
   const [chartData, setChartData] = useState([]);
 
@@ -89,7 +95,10 @@ const ChartContainer = () => {
         { name: 'Mes 3', compuesto: 600, simple: 100, montoInicial: 100 },
         { name: 'Mes 4', compuesto: 800, simple: 100, montoInicial: 100 },
         { name: 'Mes 5', compuesto: 1000, simple: 100, montoInicial: 100 },
-        { name: 'Mes 6', compuesto: 1200, simple: 100, montoInicial: 100 },
+        { name: 'Mes 6', compuesto: 1400, simple: 100, montoInicial: 100 },
+        { name: 'Mes 7', compuesto: 1800, simple: 100, montoInicial: 100 },
+        { name: 'Mes 8', compuesto: 2400, simple: 100, montoInicial: 100 },
+        { name: 'Mes 9', compuesto: 3600, simple: 100, montoInicial: 100 },
       ];
       setChartData(datos);
     };
