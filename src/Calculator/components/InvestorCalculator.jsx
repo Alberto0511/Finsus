@@ -20,7 +20,6 @@ function InvestmentCalculator() {
       id: "startingAmount",
       label: "Ingresa con cuánto dinero podrías hacer tu primera inversión:",
       type: "input",
-
       required: true,
       display: "none",
       inputType: "number",
@@ -396,6 +395,8 @@ function InvestmentCalculator() {
             </ul>
           </div>
         </div>
+
+     
         {/* Este es la caja del resultado o total del calculo termina */}
       </div>
       <div className="spacer"></div>

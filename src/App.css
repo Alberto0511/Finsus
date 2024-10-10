@@ -72,7 +72,7 @@
 .alert-container {
   margin-top: 20px;
   font-size: 11px;
-  color: var(--gris-oscuro);
+  color: var(--azul-oscuro);
 }
 
 /* Contenedor general de las cards (segunda columna) */
@@ -115,28 +115,34 @@
   border: 1px solid var(--rojo-finsus);
   border-radius: 10px;
   padding: 15px;
-  margin-bottom: 15px;
+  margin-bottom: 4px;
   background: var(--blanco);
-  width: 900px;
+  width: 875px;
+  display: flex;
+  flex-direction: column; /* Alinea los elementos en columna */
+  text-align: center; /* Centra el texto horizontalmente */
 }
+
 
 .total-investment {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  margin-left: auto; 
 }
 
 /* Es el texto (Con Interés Compuesto tendrías:) */
 .total-label {
   font-weight: bold;
   margin-bottom: 5px;
+  color: var(--azul-oscuro);
 }
 
 /* El total (0.00) */
 .total-value {
   color: var(--rojo-finsus);
   font-weight: bold;
-  font-size: 24px;
+  font-size: 40px;
 }
 
 /* Los asteriscos xd */
@@ -160,7 +166,7 @@
 }
 
 .notes li {
-  margin-bottom: 0px;
+  margin-bottom: 10px;
 }
 
 /* Estilos de la tabla */
@@ -172,7 +178,7 @@
   border-radius: 20px;
   box-shadow: 10px 10px 10px var(--negro-10);
   font-size: 14px;
- 
+
 }
 
 .div-width-finsus {
@@ -249,17 +255,38 @@
   margin-right: 8px;
 }
 
+/* Comienza estilos de grafica */
+
 /* Personalización de la leyenda */
 .recharts-legend-item {
   display: flex;
-  align-items: center;
-  justify-content: flex-start;
+  padding-left: 60px;
 }
 
 .recharts-legend-item .recharts-legend-icon {
   width: 16px;
   height: 16px;
-  margin-right: 15px;
+  margin-left: 15px;
+}
+
+/* Contenedor del gráfico */
+.chart-container {
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Tooltip personalizado */
+.custom-tooltip {
+  background-color: var(--rojo-finsus);
+  border: 1px solid #ccc;
+  padding: 10px;
+  color: white;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 @media (max-width: 768px) {
