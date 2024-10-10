@@ -1,21 +1,33 @@
 #root {
+
   max-width: 1480px;
+
+  max-width: 100%;
+
   margin: 0 auto;
   padding: 2rem;
   text-align: left;
+  justify-content: flex-start;
+  box-sizing: border-box;
 }
 
 .subtitle {
   font-size: 2.1rem;
   font-weight: 600;
   color: #ff5f54;
+  /* <<<<<<< HEAD */
+}
+
+
+
+/* =======
   margin-left: 80px;
   margin-bottom: 120px;
-}
+} */
 
 .select-container {
   position: relative;
-  width: 700px;
+  width: 1000px;
   margin: 0 auto;
   margin-bottom: 30px;
 }
@@ -24,7 +36,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 8px 12px;
+  padding: 8px 1px;
   background-color: white;
   border: 1px solid #ccc;
   border-radius: 4px;
@@ -49,7 +61,8 @@
   z-index: 1;
 }
 
-.select-option, .selected-option {
+.select-option,
+.selected-option {
   display: flex;
   justify-content: space-between;
   padding: 8px 12px;
@@ -73,14 +86,14 @@
 
 .option-time {
   flex: 1;
-  text-align: left; 
+  text-align: left;
 }
 
 .option-percentage {
   flex: 0;
   color: #ff5f54;
-  text-align: right; 
-  margin-right: 16px; 
+  text-align: right;
+  margin-right: 16px;
 }
 
 .select-icon {
@@ -93,6 +106,91 @@
 .input-field {
   border: none;
   outline: none;
-  flex: 1; 
-  font-size: 16px;
 }
+
+
+
+.interest {
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+  width: 100%;
+  margin: 0%;
+}
+
+
+.cards-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center; 
+  padding: 20px; 
+  width: calc(100% - 40px); 
+  box-sizing: border-box; 
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 350px; 
+  height: 225px; 
+  background-color: white;
+  box-shadow: 0px 0px 23px 0px rgba(0, 0, 0, 0.1);
+  border-radius: 10%;
+  margin: 10px; 
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+
+
+.card-header {
+  text-align: center;
+}
+
+.card-body {
+  text-align: center;
+}
+
+
+
+
+
+.chart-container {
+  margin-top: 50px;
+  width: 100%;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+.custom-tooltip {
+  background-color: white;
+  border: 1px solid #ccc;
+  padding: 10px;
+  border-radius: 4px;
+  font-size: 18px;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+  display: flex;
+  align-items: center;
+}
+
+.custom-tooltip img {
+  margin-right: 8px;
+}
+
+/* Personalización de la leyenda */
+.recharts-legend-item {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+
+.recharts-legend-item .recharts-legend-icon {
+  width: 16px;
+  height: 16px;
+  margin-right: 15px;
+}
+
