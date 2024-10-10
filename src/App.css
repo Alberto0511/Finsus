@@ -1,163 +1,232 @@
-#root {
+:root {
+  --rojo-finsus: #ff5f54;
+  --gris-claro: #ebebeb;
+  --gris-oscuro: #6a707e;
+  --azul-oscuro: #23223F;
+  --negro-10: rgba(0, 0, 0, 0.1);
+  --negro-50: rgba(0, 0, 0, 0.5);
+  --azul-oscuro-2: #23223f;
+  --blanco: #ffffff;
+}
 
-  max-width: 1480px;
+/* Contenedor general la calculadora incluyendo form y cards */
+.investment-calculator {
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
 
-  max-width: 100%;
+/* Espaciado de arriba y abajo de contenedor */
+.spacer {
+  height: 3em;
+}
 
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: left;
-  justify-content: flex-start;
+/* Contenido de adentro */
+.content {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+/* Separación entre cada elemento por dentro como un padding */
+.form-section,
+.info-section {
+  flex: 1 1 45%;
+  min-width: 300px;
+}
+
+/* El espaciado entre inputs del formulario */
+.form-container {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Es el texto de arriba del input */
+.form-label {
+  margin-bottom: 8px;
+}
+
+/* El input */
+.form-select,
+.form-input {
+  padding: 10px;
+  border: 1px solid var(--gris-claro);
+  border-radius: 2px;
+  font-size: 14px;
+  width: 100%;
   box-sizing: border-box;
 }
 
-.subtitle {
-  font-size: 2.1rem;
-  font-weight: 600;
-  color: #ff5f54;
-  /* <<<<<<< HEAD */
-}
-
-
-
-/* =======
-  margin-left: 80px;
-  margin-bottom: 120px;
-} */
-
-.select-container {
-  position: relative;
-  width: 1000px;
-  margin: 0 auto;
-  margin-bottom: 30px;
-}
-
-.select-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 8px 1px;
-  background-color: white;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  cursor: pointer;
-  transition: background-color 0.3s, border-color 0.3s;
-  font-size: 16px;
-}
-
-.select-header.active {
-  border-color: #007bff;
-}
-
-.select-options {
-  position: absolute;
-  top: 100%;
-  left: 0;
-  right: 0;
-  background-color: white;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-  z-index: 1;
-}
-
-.select-option,
-.selected-option {
-  display: flex;
-  justify-content: space-between;
-  padding: 8px 12px;
-  cursor: pointer;
-  text-align: left;
-}
-
-.select-option:hover {
-  background-color: #f0f0f0;
-}
-
-.select-icon {
-  color: #ff5f54;
-  transition: transform 0.3s;
-  margin-left: auto;
-}
-
-.select-icon.rotate {
-  transform: rotate(180deg);
-}
-
-.option-time {
-  flex: 1;
-  text-align: left;
-}
-
-.option-percentage {
-  flex: 0;
-  color: #ff5f54;
-  text-align: right;
-  margin-right: 16px;
-}
-
-.select-icon {
-  color: #ff5f54;
-  transition: transform 0.3s;
-  margin-left: auto;
-  margin-right: 8px;
-}
-
-.input-field {
-  border: none;
+.form-select:focus,
+.form-input:focus {
   outline: none;
+  border-color: var(--rojo-finsus);
 }
 
-
-
-.interest {
-  display: flex;
-  flex-direction: row;
-  justify-content: left;
-  width: 100%;
-  margin: 0%;
+/* Texto de abajo del formulario */
+.alert-container {
+  margin-top: 20px;
+  font-size: 11px;
+  color: var(--gris-oscuro);
 }
 
-
-.cards-container {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: center; 
-  padding: 20px; 
-  width: calc(100% - 40px); 
-  box-sizing: border-box; 
+/* Contenedor general de las cards (segunda columna) */
+.info-section {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
 }
 
-.card {
+/* Las 4 CARDS COMO TAL */
+.info-card {
+  background: var(--blanco);
+  box-shadow: 0 1px 4px var(--negro-10);
+  border-radius: 20px;
+  min-height: 8em;
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  width: 350px; 
-  height: 225px; 
-  background-color: white;
-  box-shadow: 0px 0px 23px 0px rgba(0, 0, 0, 0.1);
-  border-radius: 10%;
-  margin: 10px; 
-  padding-left: 5px;
-  padding-right: 5px;
+  align-items: center;
+  padding: 10px;
 }
 
+/* El contenido de las cards (Los números) */
+.info-value {
+  text-align: center;
+  color: var(--rojo-finsus);
+  font-size: 30px;
+  font-weight: bold;
+}
 
+/* El contenido de las cards (Los labels o texto) */
+.info-label {
+  text-align: center;
+  font-size: 12px;
+  padding: 0;
+}
 
-.card-header {
+/* La card donde se muestra el total o cálculo del interés */
+.total-box {
+  border: 1px solid var(--rojo-finsus);
+  border-radius: 10px;
+  padding: 15px;
+  margin-bottom: 15px;
+  background: var(--blanco);
+  width: 900px;
+}
+
+.total-investment {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+/* Es el texto (Con Interés Compuesto tendrías:) */
+.total-label {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+/* El total (0.00) */
+.total-value {
+  color: var(--rojo-finsus);
+  font-weight: bold;
+  font-size: 24px;
+}
+
+/* Los asteriscos xd */
+.total-asterisk {
+  position: relative;
+  top: -10px;
+  color: var(--rojo-finsus);
+  font-size: 24px;
+}
+
+/* Notas debajo de la caja del total */
+.notes {
+  margin-top: 5px;
+  padding-left: 20px;
+  font-size: 12px;
+  color: var(--azul-oscuro);
+}
+
+.notes ul {
+  padding-left: 15px;
+}
+
+.notes li {
+  margin-bottom: 0px;
+}
+
+/* Estilos de la tabla */
+.table-finsus {
+  width: 100%;
+  margin: 20px auto;
+  border-collapse: collapse;
+  text-align: left;
+  border-radius: 20px;
+  box-shadow: 10px 10px 10px var(--negro-10);
+  font-size: 14px;
+ 
+}
+
+.div-width-finsus {
+  width: 100%;
+}
+
+.th-finsus {
+  padding: 20px;
+  background-color: var(--azul-oscuro);
+  color: var(--blanco);
   text-align: center;
 }
 
-.card-body {
+.th2-finsus {
+  padding: 20px;
+  background-color: var(--rojo-finsus);
+  color: var(--blanco);
   text-align: center;
 }
 
+.th3-finsus {
+  padding: 20px;
+  background-color: var(--blanco);
+  border-top-left-radius: 20px;
+  text-align: center;
+}
+
+.th4-finsus {
+  padding: 20px;
+  background-color: var(--azul-oscuro);
+  color: var(--blanco);
+  border-top-right-radius: 20px;
+  text-align: center;
+}
+
+.td-finsus {
+  padding: 25px;
+  border-bottom: 0.5px solid #f0eded;
+}
+
+.td2-finsus {
+  padding: 25px;
+  border-bottom: 1px solid #f0eded;
+  box-shadow: 10px 3px 3px rgba(255, 95, 84, 0.8);
+}
+
+.td3-finsus {
+  padding: 25px;
+  border-bottom: 1px solid #f0eded;
+  box-shadow: 10px 0px 3px rgba(255, 95, 84, 0.8);
+}
 
 
-
-
+/* Grafica */
 .chart-container {
   margin-top: 50px;
   width: 100%;
@@ -166,7 +235,7 @@
 }
 
 .custom-tooltip {
-  background-color: white;
+  background-color: var(--blanco);
   border: 1px solid #ccc;
   padding: 10px;
   border-radius: 4px;
@@ -187,10 +256,19 @@
   justify-content: flex-start;
 }
 
-
 .recharts-legend-item .recharts-legend-icon {
   width: 16px;
   height: 16px;
   margin-right: 15px;
 }
 
+@media (max-width: 768px) {
+  .content {
+    flex-direction: column;
+  }
+
+  .form-section,
+  .info-section {
+    flex: 1 1 100%;
+  }
+}

@@ -1,9 +1,9 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
-import InterestCalculator from './Calculator/InterestCalculator.jsx'
+import App from './App'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <InterestCalculator />
+    <App /> 
   </StrictMode>,
 )

@@ -1,104 +1,87 @@
-import React from 'react';
+import React from "react";
+
+// Funciones para manejar el estado (simulado)
+let valorInicial = 0.0;
+let valorInicial1 = 0.0;
+
+function setValorInicial(value) {
+  valorInicial = value;
+}
+
+function setValorInicial1(value) {
+  valorInicial1 = value;
+}
+
+function formatNumber(input) {
+  if (isNaN(input)) {
+    return input;
+  }
+
+  let number = parseFloat(input);
+  let fixedNumber = number.toFixed(2);
+  let formattedNumber = parseFloat(fixedNumber).toLocaleString("en-US", {
+    minimumFractionDigits: 2,
+    maximumFractionDigits: 2,
+  });
+  return formattedNumber;
+}
+
+
 
 export default function TablaFinsus() {
-  const tableFinsusStyle = {
-    width: '100%',
-    margin: '20px auto',
-    borderCollapse: 'collapse',
-    textAlign: 'left',
-    borderRadius: '20px',
-    boxShadow: '10px 10px 10px 10px rgba(0, 0, 0, 0.1)',
-    fontSize: '14px',
-  };
 
-  const divWidthFinsus = {
-    width: '100%',
-  };
+  setValorInicial(valorInicial);
+  setValorInicial1(valorInicial1);
 
-  const thFinsusStyle = {
-    padding: '20px',
-    backgroundColor: '#23223F',
-    color: '#FFFFFF',
-    textAlign: 'center',
-  };
-
-  const th2FinsusStyle = {
-    padding: '20px',
-    backgroundColor: '#ff5f54',
-    color: '#FFFFFF',
-    textAlign: 'center',
-  };
-
-  const th3FinsusStyle = {
-    padding: '20px',
-    backgroundColor: '#FFFFF',
-    borderTopLeftRadius: '20px',
-    textAlign: 'center',
-  };
-
-  const th4FinsusStyle = {
-    padding: '20px',
-    backgroundColor: '#23223F',
-    color: '#FFFFFF',
-    borderTopRightRadius: '20px',
-    textAlign: 'center',
-  };
-
-  const tdFinsusStyle = {
-    padding: '25px',
-    borderBottom: '0.5px solid #F0EDED',
-  };
-
-  const td2FinsusStyle = {
-    padding: '25px',
-    borderBottom: '1px solid #F0EDED',
-    boxShadow: '10px 3px 3px rgba(255, 95, 84, 0.8)',
-  };
-
-  const td3FinsusStyle = {
-    padding: '25px',
-    borderBottom: '1px solid #F0EDED',
-    boxShadow: '10px 0px 3px rgba(255, 95, 84, 0.8)',
-  };
-
+  
   return (
-    <div style={divWidthFinsus}>
-      <table style={tableFinsusStyle}>
-        <tr>
-          <th style={th3FinsusStyle}></th>
-          <th style={thFinsusStyle}>Interés simple</th>
-          <th style={th2FinsusStyle}>Interés compuesto</th>
-          <th style={th4FinsusStyle}>Diferencia</th>
-        </tr>
+    <div className="div-width-finsus">
+      <table className="table-finsus">
+        <thead>
+          <tr>
+            <th className="th3-finsus"></th>
+            <th className="th-finsus">Interés simple</th>
+            <th className="th2-finsus">Interés compuesto</th>
+            <th className="th4-finsus">Diferencia</th>
+          </tr>
+        </thead>
         <tbody>
           <tr>
-            <td style={tdFinsusStyle}>Valor inicial</td>
-            <td style={tdFinsusStyle}></td>
-            <td style={td3FinsusStyle}></td>
-            <td style={tdFinsusStyle}></td>
+            <td className="td-finsus">Valor inicial</td>
+            <td className="td-finsus">  ${formatNumber(valorInicial)}</td>
+            <td className="td3-finsus"> ${formatNumber(valorInicial)}</td>
+            <td className="td-finsus">+ ${formatNumber(valorInicial)}</td>
           </tr>
           <tr>
-            <td style={tdFinsusStyle}>
+            <td className="td-finsus">
               Intereses generados al final del periodo
             </td>
-            <td style={tdFinsusStyle}></td>
-            <td style={td3FinsusStyle}></td>
-            <td style={tdFinsusStyle}></td>
+            <td className="td-finsus">+ ${formatNumber(valorInicial)}</td>
+            <td className="td3-finsus">+ ${formatNumber(valorInicial)}</td>
+            <td className="td-finsus">+ ${formatNumber(valorInicial)}</td>
           </tr>
           <tr>
-            <td style={tdFinsusStyle}>% de crecimiento del dinero</td>
-            <td style={tdFinsusStyle}></td>
-            <td style={td3FinsusStyle}></td>
-            <td style={tdFinsusStyle}></td>
+            <td className="td-finsus">% de crecimiento del dinero</td>
+            <td className="td-finsus"></td>
+            <td className="td3-finsus"></td>
+            <td className="td-finsus"></td>
           </tr>
           <tr>
-            <td style={tdFinsusStyle}>Monto final</td>
-            <td style={tdFinsusStyle}></td>
-            <td style={td2FinsusStyle}></td>
-            <td style={tdFinsusStyle}></td>
+            <td className="td-finsus">Monto final</td>
+            <td className="td-finsus"> ${formatNumber(valorInicial)}</td>
+            <td className="td2-finsus">+ ${formatNumber(valorInicial)}</td>
+            <td className="td-finsus">+ ${formatNumber(valorInicial)}</td>
           </tr>
         </tbody>
       </table>
     </div>
   );
 }
+
+
+const renderTablaFinsus = () => {
+  const result = <TablaFinsus />;
+  console.log(result); 
+};
+
+renderTablaFinsus();

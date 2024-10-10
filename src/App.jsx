@@ -1,11 +1,15 @@
 import React from 'react';
-import IntenerestCalculator from './Calculator/IntenerestCalculator';
+import InvestorCalculator from './Calculator/components/InvestorCalculator';
+import Table from './Calculator/components/Table'
+import "./App.css";
 
 function App() {
   return (
     <>
-      <IntenerestCalculator />
+      <InvestorCalculator />
+     
     </>
+
   );
 }
 
