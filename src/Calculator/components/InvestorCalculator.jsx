@@ -19,7 +19,6 @@ function InvestmentCalculator() {
       id: "startingAmount",
       label: "Ingresa con cuánto dinero podrías hacer tu primera inversión:",
       type: "input",
-
       required: true,
       display: "none",
       inputType: "number",
