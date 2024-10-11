@@ -1,8 +1,8 @@
-const Catalogs = {
+export const Catalogs = {
   catTerm: [
     {
       value: 1,
-      label: "7 dias",
+      label: "7 días",
       rate: 10.06,
       periodYear: 1,
       catView: [1, 3],
@@ -113,5 +113,3 @@ const Catalogs = {
     },
   ],
 };
-
-export default Catalogs;

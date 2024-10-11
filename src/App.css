@@ -60,6 +60,8 @@
   font-size: 14px;
   width: 100%;
   box-sizing: border-box;
+  padding-left: 22px; 
+
 }
 
 .form-select:focus,
@@ -79,20 +81,19 @@
 .info-section {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 20px;
+  gap: 5px 20px; 
 }
 
 /* Las 4 CARDS COMO TAL */
 .info-card {
   background: var(--blanco);
-  box-shadow: 0 1px 4px var(--negro-10);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); 
   border-radius: 20px;
-  min-height: 8em;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 10px;
+  height: 150px;
 }
 
 /* El contenido de las cards (Los números) */
@@ -115,12 +116,12 @@
   border: 1px solid var(--rojo-finsus);
   border-radius: 10px;
   padding: 15px;
-  margin-bottom: 4px;
   background: var(--blanco);
   width: 875px;
   display: flex;
-  flex-direction: column; /* Alinea los elementos en columna */
-  text-align: center; /* Centra el texto horizontalmente */
+  flex-direction: column; 
+  text-align: center; 
+  margin-top: -40px;
 }
 
 
@@ -142,7 +143,7 @@
 .total-value {
   color: var(--rojo-finsus);
   font-weight: bold;
-  font-size: 40px;
+  font-size: 35px;
 }
 
 /* Los asteriscos xd */
@@ -168,6 +169,21 @@
 .notes li {
   margin-bottom: 10px;
 }
+
+.input-with-icon {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.input-icon {
+  position: absolute;
+  left: 8px;
+  color: #888; 
+  pointer-events: none; 
+}
+
+
 
 /* Estilos de la tabla */
 .table-finsus {
@@ -273,3 +289,4 @@
     flex: 1 1 100%;
   }
 }
+

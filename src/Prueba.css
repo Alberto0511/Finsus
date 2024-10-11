@@ -1,0 +1,123 @@
+.interest-calculator {
+    max-width: 500px;
+    margin: 2rem auto;
+    padding: 2rem;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+  }
+  
+  .interest-calculator h1.title {
+    text-align: center;
+    margin-bottom: 1.5rem;
+  }
+  
+  .form-group {
+    margin-bottom: 1rem;
+  }
+  
+  .form-group label.form-label {
+    display: block;
+    margin-bottom: 0.5rem;
+  }
+  
+  .input-with-icon,
+  .select-with-icon {
+    position: relative;
+  }
+  
+  .input-icon {
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    transform: translateY(-50%);
+    color: #888;
+    pointer-events: none;
+    font-size: 1.2rem;
+  }
+  
+  .select-icon {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    color: #888;
+    pointer-events: none;
+    font-size: 1.2rem;
+  }
+  
+  .form-input {
+    width: 100%;
+    padding: 0.5rem 0.5rem 0.5rem 2.5rem; 
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .form-input::placeholder {
+    color: #aaa;
+  }
+  
+  .form-select {
+    width: 100%;
+    padding: 0.5rem 2.5rem 0.5rem 0.5rem; 
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    appearance: none; 
+    background-color: #fff;
+  }
+  
+  .form-select::placeholder {
+    color: #aaa;
+  }
+  
+  .form-input:focus,
+  .form-select:focus {
+    border-color: #007bff;
+    outline: none;
+  }
+  
+  .error {
+    color: red;
+    font-size: 0.8rem;
+    margin-top: 0.25rem;
+  }
+  
+  .general-error {
+    margin-bottom: 1rem;
+  }
+  
+  .result {
+    margin-top: 2rem;
+    padding: 1rem;
+    background-color: #e9ffe9;
+    border: 1px solid #b2ffb2;
+    border-radius: 4px;
+    text-align: center;
+  }
+  
+  .result h4 {
+    margin-bottom: 0.5rem;
+  }
+  
+  .result h1 {
+    font-size: 1.5rem;
+    color: #28a745;
+  }
+  
+  /* Estilos para el Texto de Alerta */
+  .alert-container {
+    margin-top: 1rem;
+    padding: 0.75rem;
+    border-radius: 4px;
+  }
+  
+  .alert-text {
+    background-color: #ffdddd;
+    border-left: 6px solid #f44336;
+    padding: 10px;
+    color: #a94442;
+    font-weight: bold;
+  }
+  
