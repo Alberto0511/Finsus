@@ -194,6 +194,7 @@
   border-radius: 20px;
   box-shadow: 10px 10px 10px var(--negro-10);
   font-size: 14px;
+
 }
 
 .div-width-finsus {
@@ -246,7 +247,32 @@
   box-shadow: 10px 0px 3px rgba(255, 95, 84, 0.8);
 }
 
+
+/* Grafica */
+.chart-container {
+  margin-top: 50px;
+  width: 100%;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+.custom-tooltip {
+  background-color: var(--blanco);
+  border: 1px solid #ccc;
+  padding: 10px;
+  border-radius: 4px;
+  font-size: 18px;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+  display: flex;
+  align-items: center;
+}
+
+.custom-tooltip img {
+  margin-right: 8px;
+}
+
 /* Comienza estilos de grafica */
+
 /* Personalización de la leyenda */
 .recharts-legend-item {
   display: flex;

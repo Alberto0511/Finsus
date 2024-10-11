@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { TfiMoney } from "react-icons/tfi";
+
 function InvestmentCalculator() {
   const Catalogs = {
     catTerm: [
@@ -216,7 +217,6 @@ function InvestmentCalculator() {
     return formattedNumber;
   };
 
-
   const onChangeSelect = (value, id, options) => {
     const selectedOption = options.find(
       (option) => option.value === parseInt(value)
@@ -351,7 +351,7 @@ function InvestmentCalculator() {
                         onChange={(e) =>
                           onChangeInput(e, item.inputType, item.id)
                         }
-                        onBlur={() => handleBlur(item.id)} 
+                        onBlur={() => handleBlur(item.id)}
                         className="form-input"
                       />
                     </div>
@@ -364,7 +364,7 @@ function InvestmentCalculator() {
                       onChange={(e) =>
                         onChangeInput(e, item.inputType, item.id)
                       }
-                      onBlur={() => handleBlur(item.id)} 
+                      onBlur={() => handleBlur(item.id)}
                       className="form-input"
                     />
                   )}
@@ -585,9 +585,105 @@ function InvestmentCalculator() {
             </ul>
           </div>
         </div>
-        {/* Fin de la caja del resultado */}
       </div>
       <div className="spacer"></div>
+
+      {/* <div className="div-width-finsus">
+        <table className="table-finsus">
+          <thead>
+            <tr>
+              <th className="th3-finsus"></th>
+              <th className="th-finsus">Interés simple</th>
+              <th className="th2-finsus">Interés compuesto</th>
+              <th className="th4-finsus">Diferencia</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td className="td-finsus">Valor inicial</td>
+              <td className="td-finsus"> ${formatNumber(valorInicial)}</td>
+              <td className="td3-finsus"> ${formatNumber(valorInicial)}</td>
+              <td className="td-finsus">+ ${formatNumber(valorInicial)}</td>
+            </tr>
+            <tr>
+              <td className="td-finsus">
+                Intereses generados al final del periodo
+              </td>
+              <td className="td-finsus">
+                + ${formatNumber(interesesGenerados)}
+              </td>
+
+              <td className="td3-finsus">
+                {" "}
+                {Number.isNaN(interesesGenerados1)
+                  ? interesesGenerados1
+                  : interesesGenerados1 === "NA"
+                  ? interesesGenerados1
+                  : "+ $" + formatNumber(interesesGenerados1)}
+              </td>
+
+              <td className="td-finsus">
+                {" "}
+                {Number.isNaN(interesesGenerados2)
+                  ? interesesGenerados2
+                  : interesesGenerados2 === "NA"
+                  ? interesesGenerados2
+                  : "+ $" + formatNumber(interesesGenerados2)}
+              </td>
+            </tr>
+
+            <tr>
+              <td className="td-finsus">% de crecimiento del dinero</td>
+              <td className="td-finsus">
+                {" "}
+                {Number.isNaN(crecimientodeDInero)
+                  ? crecimientodeDInero
+                  : crecimientodeDInero === "NA"
+                  ? crecimientodeDInero
+                  : formatNumber(crecimientodeDInero.toFixed(2) + "%")}
+              </td>
+
+              <td className="td3-finsus">
+                {" "}
+                {Number.isNaN(crecimientodeDInero1)
+                  ? crecimientodeDInero1
+                  : crecimientodeDInero1 === "NA"
+                  ? crecimientodeDInero1
+                  : formatNumber(crecimientodeDInero1.toFixed(2) + "%")}
+              </td>
+
+              <td className="td-finsus">
+                {" "}
+                {Number.isNaN(crecimientodeDInero2)
+                  ? crecimientodeDInero2
+                  : crecimientodeDInero2 === "NA"
+                  ? crecimientodeDInero2
+                  : "+" + formatNumber(crecimientodeDInero2.toFixed(2) + "%")}
+              </td>
+            </tr>
+            <tr>
+              <td className="td-finsus">Monto final</td>
+              <td className="td-finsus"> ${formatNumber(montoFinal)} </td>
+              <td className="td2-finsus">
+                {" "}
+                {Number.isNaN(montoFinal1)
+                  ? montoFinal1
+                  : montoFinal1 === "NA"
+                  ? montoFinal1
+                  : "$" + formatNumber(montoFinal1)}
+              </td>
+              <td className="td-finsus">
+                {" "}
+                {Number.isNaN(montoFinal2)
+                  ? montoFinal2
+                  : montoFinal2 === "NA"
+                  ? montoFinal2
+                  : "+ $" + formatNumber(montoFinal2)}
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div> */}
     </div>
   );
 }
