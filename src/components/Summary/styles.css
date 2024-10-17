@@ -1,0 +1,133 @@
+.containerDiv {
+    width: 100%;
+    box-sizing: border-box;
+  }
+  
+  .divcenter {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .elementoDiv {
+    width: 50%;
+    float: left;
+  }
+  
+  .loginContainerFormSummary {
+    background: hsla(0, 0%, 100%, 0.12) !important;
+    color: #fff !important;
+    font-family: 'Poppins';
+    box-shadow: none !important;
+  }
+  
+  #divImput > .ant-input-number:hover {
+    border-color: #ff5f54 !important;
+  }
+  
+  #divImput > .ant-input-number-focused {
+    border-color: #ff5f54 !important;
+  }
+  
+  #inputFormSumary {
+    font-size: 17px !important;
+    height: -1px !important;
+    margin: 9px;
+    color: #23223f;
+    font-weight: bold;
+  }
+  
+  #inputFormSumary > .ant-input-number-sm input {
+    height: 16px;
+  }
+  
+  .classMediaQueryInpunt {
+    max-width: 11% !important;
+  }
+  
+  .styleHoverSummary {
+    cursor: pointer;
+  }
+  
+  .styleHoverSummary:hover {
+    cursor: pointer;
+  }
+  
+  .divTotalSummary {
+    border: 1px solid #ff5f54;
+    padding: 35px;
+    display: inline-block;
+    border-radius: 10px 10px 0px;
+    text-align: center;
+  }
+  
+  .classSummaryTotal {
+    font-style: normal;
+    font-size: 35px !important;
+    line-height: 17px;
+    letter-spacing: 0.15px;
+    color: #23223f;
+  }
+  
+  .classStileButtonOwner {
+    height: 3em !important;
+    background: white !important;
+    color: red !important;
+    border: 1px solid #ff5f54 !important;
+    border-radius: 0.7 !important;
+    margin-top: 1em;
+  }
+  
+  .classStileButtonOwner:hover {
+    background: #ff5f54 !important;
+    color: #fffcfc !important;
+  }
+  
+  #btnOwner > .btn-secondary.disabled,
+  .btn-secondary:disabled {
+    background-color: #ff5f54 !important;
+    color: #b8b8b8 !important;
+    font-size: 16px !important;
+  }
+  
+  #btnOwner {
+    font-size: 16px !important;
+    border-radius: 6px !important;
+  }
+  
+  @media (max-width: 470px) {
+    .classSummaryTotal {
+      font-size: 18px !important;
+    }
+  
+    #inputFormSumary {
+      font-size: 15px !important;
+    }
+  
+    #inputFormSumaryT {
+      font-size: 22px !important;
+    }
+  
+    .classMediaQueryInpunt {
+      max-width: 56% !important;
+    }
+  }
+  
+  @media screen and (max-width: 1200px) {
+    .classMediaQueryInpunt {
+      max-width: 18% !important;
+    }
+  }
+  
+  @media screen and (max-width: 768px) {
+    .classMediaQueryInpunt {
+      max-width: 20% !important;
+    }
+  }
+  
+  @media screen and (max-width: 556px) {
+    .classMediaQueryInpunt {
+      max-width: 38% !important;
+    }
+  }
+  

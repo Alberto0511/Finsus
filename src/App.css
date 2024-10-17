@@ -1,189 +1,208 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
 :root {
   --rojo-finsus: #ff5f54;
   --gris-claro: #ebebeb;
-  --gris-oscuro: #6a707e;
-  --azul-oscuro: #23223F;
   --negro-10: rgba(0, 0, 0, 0.1);
   --negro-50: rgba(0, 0, 0, 0.5);
-  --azul-oscuro-2: #23223f;
-  --blanco: #ffffff;
+  --azul-finsus: #23223f;
+  --gris-finsus: #6a707e;
+  --blanco-finsus: #ffffff;
 }
 
-/* Contenedor general la calculadora incluyendo form y cards */
-.investment-calculator {
-  padding: 20px;
-  font-family: Arial, sans-serif;
-}
-
-/* Espaciado de arriba y abajo de contenedor */
-.spacer {
-  height: 3em;
-}
-
-/* Contenido de adentro */
-.content {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 30px;
-}
-
-/* Separación entre cada elemento por dentro como un padding */
-.form-section,
-.info-section {
-  flex: 1 1 45%;
-  min-width: 300px;
-}
-
-/* El espaciado entre inputs del formulario */
-.form-container {
-  display: flex;
-  flex-direction: column;
-  gap: 40px;
-}
-
-.form-group {
-  display: flex;
-  flex-direction: column;
-}
-
-/* Es el texto de arriba del input */
-.form-label {
-  margin-bottom: 8px;
-}
-
-/* El input */
-.form-select,
-.form-input {
-  padding: 10px;
-  border: 1px solid var(--gris-claro);
-  border-radius: 2px;
-  font-size: 14px;
-  width: 100%;
+* {
   box-sizing: border-box;
-  padding-left: 22px; 
-
-}
-
-.form-select:focus,
-.form-input:focus {
-  outline: none;
-  border-color: var(--rojo-finsus);
-}
-
-/* Texto de abajo del formulario */
-.alert-container {
-  margin-top: 20px;
-  font-size: 11px;
-  color: var(--azul-oscuro);
-}
-
-/* Contenedor general de las cards (segunda columna) */
-.info-section {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 5px 20px; 
-}
-
-/* Las 4 CARDS COMO TAL */
-.info-card {
-  background: var(--blanco);
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); 
-  border-radius: 20px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 150px;
-}
-
-/* El contenido de las cards (Los números) */
-.info-value {
-  text-align: center;
-  color: var(--rojo-finsus);
-  font-size: 30px;
-  font-weight: bold;
-}
-
-/* El contenido de las cards (Los labels o texto) */
-.info-label {
-  text-align: center;
-  font-size: 12px;
+  margin: 0;
   padding: 0;
 }
 
-/* La card donde se muestra el total o cálculo del interés */
-.total-box {
-  border: 1px solid var(--rojo-finsus);
-  border-radius: 10px;
-  padding: 15px;
-  background: var(--blanco);
-  width: 875px;
-  display: flex;
-  flex-direction: column; 
-  text-align: center; 
-  margin-top: -40px;
+body {
+  background-color: var(--blanco-finsus);
+  font-family: "Poppins", sans-serif;
 }
 
+.interest-calculator {
+  width: 100%;
+  min-height: 80vh;
+  padding: 2rem;
+  background-color: var(--blanco-finsus);
+}
 
-.total-investment {
+.interest-calculator h1.title {
+  text-align: left;
+  margin-bottom: 110px;
+  color: var(--rojo-finsus);
+  font-weight: 500;
+}
+
+.content {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.left-column {
+  flex: 1;
+  min-width: 300px;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  margin-left: auto; 
 }
 
-/* Es el texto (Con Interés Compuesto tendrías:) */
-.total-label {
-  font-weight: bold;
-  margin-bottom: 5px;
-  color: var(--azul-oscuro);
+.calculator-form {
+  width: 100%;
 }
 
-/* El total (0.00) */
-.total-value {
-  color: var(--rojo-finsus);
-  font-weight: bold;
-  font-size: 35px;
+.form-group {
+  margin-bottom: 30px;
 }
 
-/* Los asteriscos xd */
-.total-asterisk {
-  position: relative;
-  top: -10px;
-  color: var(--rojo-finsus);
-  font-size: 24px;
-}
-
-/* Notas debajo de la caja del total */
-.notes {
-  margin-top: 5px;
-  padding-left: 20px;
-  font-size: 12px;
-  color: var(--azul-oscuro);
-}
-
-.notes ul {
-  padding-left: 15px;
-}
-
-.notes li {
+.form-group label.form-label {
+  display: block;
   margin-bottom: 10px;
+  color: var(--azul-finsus);
+  font-size: 15px;
 }
 
-.input-with-icon {
+.input-with-icon,
+.select-with-icon {
   position: relative;
-  display: flex;
-  align-items: center;
 }
 
 .input-icon {
   position: absolute;
-  left: 8px;
-  color: #888; 
-  pointer-events: none; 
+  top: 50%;
+  left: 10px;
+  transform: translateY(-50%);
+  color: var(--gris-finsus);
+  pointer-events: none;
+  font-size: 1.2rem;
 }
 
+.select-icon {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  color: var(--rojo-finsus);
+  pointer-events: none;
+  font-size: 1.2rem;
+}
 
+.form-input {
+  width: 100%;
+  padding: 0.5rem 0.5rem 0.5rem 2.5rem;
+  border: 1px solid #cccccc;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+.form-input::placeholder {
+  color: var(--gris-finsus);
+}
+
+.form-select {
+  width: 100%;
+  padding: 0.5rem 2.5rem 0.5rem 0.5rem;
+  border: 1px solid var(--gris-finsus);
+  border-radius: 4px;
+  appearance: none;
+  background-color: var(--blanco-finsus);
+  font-size: 1rem;
+}
+
+.form-select::placeholder {
+  color: var(--gris-finsus);
+}
+
+.form-input:focus,
+.form-select:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+.alert-container {
+  margin-top: -15px;
+}
+
+.alert-text {
+  background-color: var(--blanco-finsus);
+  padding: 10px;
+  color: var(--azul-finsus);
+  font-size: 11px;
+}
+
+.default-text {
+  background-color: var(--blanco-finsus);
+  padding: 10px;
+  color: var(--azul-finsus);
+  font-size: 11px;
+}
+
+.right-column {
+  flex: 1;
+  min-width: 300px;
+  display: flex;
+  flex-direction: column;
+}
+
+.cards-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.card {
+  border: 1px solid #dddddd;
+  border-radius: 20px;
+  padding: 16px;
+  text-align: center;
+  box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.1);
+  background-color: var(--blanco-finsus);
+}
+
+.card-value {
+  font-size: 40px;
+  color: var(--rojo-finsus);
+  font: bold;
+}
+
+.card-title {
+  font-size: 12px;
+  margin-bottom: 8px;
+  color: var(--azul-finsus);
+  font-weight: 500;
+}
+
+.result {
+  margin-top: 20px;
+  padding: 10px;
+  border: 1px solid var(--rojo-finsus);
+  border-radius: 15px;
+  text-align: center;
+  background-color: var(--blanco-finsus);
+}
+
+.result h4 {
+  color: var(--azul-finsus);
+  font-weight: 600;
+}
+
+.result h1 {
+  font-size: 37px;
+  color: var(--rojo-finsus);
+  font-weight: 500;
+}
+
+.additional-info {
+  margin-top: 20px;
+  font-size: 11px;
+  color: var(--gris-finsus);
+}
+
+.additional-info p {
+  margin: 5px 0;
+}
 
 /* Estilos de la tabla */
 .table-finsus {
@@ -194,7 +213,6 @@
   border-radius: 20px;
   box-shadow: 10px 10px 10px var(--negro-10);
   font-size: 14px;
-
 }
 
 .div-width-finsus {
@@ -203,29 +221,29 @@
 
 .th-finsus {
   padding: 20px;
-  background-color: var(--azul-oscuro);
-  color: var(--blanco);
+  background-color: var(--azul-finsus);
+  color: var(--blanco-finsus);
   text-align: center;
 }
 
 .th2-finsus {
   padding: 20px;
   background-color: var(--rojo-finsus);
-  color: var(--blanco);
+  color: var(--blanco-finsus);
   text-align: center;
 }
 
 .th3-finsus {
   padding: 20px;
-  background-color: var(--blanco);
+  background-color: var(--blanco-finsus);
   border-top-left-radius: 20px;
   text-align: center;
 }
 
 .th4-finsus {
   padding: 20px;
-  background-color: var(--azul-oscuro);
-  color: var(--blanco);
+  background-color: var(--azul-finsus);
+  color: var(--blanco-finsus);
   border-top-right-radius: 20px;
   text-align: center;
 }
@@ -247,7 +265,6 @@
   box-shadow: 10px 0px 3px rgba(255, 95, 84, 0.8);
 }
 
-
 /* Grafica */
 .chart-container {
   margin-top: 50px;
@@ -257,7 +274,7 @@
 }
 
 .custom-tooltip {
-  background-color: var(--blanco);
+  background-color: var(--blanco-finsus);
   border: 1px solid #ccc;
   padding: 10px;
   border-radius: 4px;
@@ -288,7 +305,7 @@
 /* Contenedor del gráfico */
 .chart-container {
   padding: 20px;
-  background-color: #f9f9f9;
+  background-color: var(--blanco-finsus);
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
@@ -298,11 +315,17 @@
   background-color: var(--rojo-finsus);
   border: 1px solid #ccc;
   padding: 10px;
-  color: white;
+  color: var(--blanco-finsus);
   border-radius: 5px;
   display: flex;
   align-items: center;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 1200px) {
+  .cards-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 @media (max-width: 768px) {
@@ -310,9 +333,12 @@
     flex-direction: column;
   }
 
-  .form-section,
-  .info-section {
-    flex: 1 1 100%;
+  .cards-container {
+    grid-template-columns: 1fr;
+  }
+
+  .left-column,
+  .right-column {
+    min-width: 100%;
   }
 }
-
