@@ -1,6 +1,8 @@
 import React, { useEffect } from "react";
 import { InputNumber, Button } from "antd";
 
+import { Div_container, Div_calculator, Div_text, Input, Total_div, Total_button, Span } from './index.styles'
+
 function Summary() {
   const [investment, setInvestment] = React.useState({
     amount: 0,
@@ -112,16 +114,15 @@ function Summary() {
   };
 
   return (
-    <div style={{ padding: "2em", backgroundColor: "#282c34", color: "white" }}>
-      <h2>Sabias que?</h2>
-      <div style={{ marginBottom: "2em" }}>
-        <div>
-          <span>
+    <Div_container>
+      {/* <h2>Sabias que?</h2> */}
+      <Div_calculator>
+        <Div_text>
+          <Span>
             Si hace{" "}
-            <InputNumber
+            <Input
               controls={false}
               size="small"
-              style={{ margin: "0 6px", borderRadius: "10px", border: "2px dashed #ff5f54" }}
               max={30}
               value={isTimeFocused ? undefined : investment.time} 
               onChange={(e) => onChangeInput(e, "time")}
@@ -130,10 +131,9 @@ function Summary() {
               onKeyDown={handleKeyDown}
             />{" "}
             años hubieras invertido{" "}
-            <InputNumber
+            <Input
               controls={false}
               size="small"
-              style={{ margin: "0 6px", borderRadius: "10px", border: "2px dashed #ff5f54" }}
               max={50000}
               formatter={(value) => `$${value}`.replace(/\B(?=(\d{3})+(?!\d))/g, ",")}
               parser={(value) => value.replace(/\$\s?|(,*)/g, "")}
@@ -144,15 +144,14 @@ function Summary() {
               onKeyDown={handleKeyDown} 
             />{" "}
             quincenales.
-          </span>
-        </div>
-        <div>
-          <span>
+          </Span>
+        </Div_text>
+        <Div_text>
+          <Span>
             A una tasa anual fija del{" "}
-            <InputNumber
+            <Input
               controls={false}
               size="small"
-              style={{ margin: "0 6px", borderRadius: "10px", border: "2px dashed #ff5f54" }}
               max={15.1}
               value={isRateFocused ? undefined : investment.rate} 
               onChange={(e) => onChangeInput(e, "rate")}
@@ -161,19 +160,25 @@ function Summary() {
               onKeyDown={handleKeyDown} 
             />{" "}
             % hoy tendrías:
-          </span>
-        </div>
-        <div style={{ marginTop: "1em" }}>
-          <h3>Total: ${Number(totalValue).toLocaleString("en-US")}</h3>
-        </div>
-      </div>
-      <Button
-        type="primary"
-        onClick={() => calcularValorFinal()}
-      >
-        Calcular
-      </Button>
-    </div>
+          </Span>
+        </Div_text>
+
+          <Total_div>
+            <h3>${Number(totalValue).toLocaleString("en-US")} *</h3>
+          </Total_div>
+
+          <Total_button
+            type="primary"
+            onClick={() => calcularValorFinal()}
+          >
+            Calcular
+          </Total_button>
+          
+          
+          
+        </Div_calculator>
+
+    </Div_container>
   );
 }
 

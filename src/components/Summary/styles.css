@@ -1,53 +1,53 @@
-.containerDiv {
+/* .containerDiv {
     width: 100%;
     box-sizing: border-box;
-  }
+  } */
   
-  .divcenter {
+  /* .divcenter {
     align-items: center;
     display: flex;
     justify-content: center;
-  }
+  } */
   
-  .elementoDiv {
+  /* .elementoDiv {
     width: 50%;
     float: left;
-  }
-  
+  } */
+/*   
   .loginContainerFormSummary {
     background: hsla(0, 0%, 100%, 0.12) !important;
     color: #fff !important;
     font-family: 'Poppins';
     box-shadow: none !important;
-  }
+  } */
   
-  #divImput > .ant-input-number:hover {
+  /* #divImput > .ant-input-number:hover {
     border-color: #ff5f54 !important;
-  }
+  } */
   
-  #divImput > .ant-input-number-focused {
+  /* #divImput > .ant-input-number-focused {
     border-color: #ff5f54 !important;
-  }
+  } */
   
-  #inputFormSumary {
+  /* #inputFormSumary {
     font-size: 17px !important;
     height: -1px !important;
     margin: 9px;
     color: #23223f;
     font-weight: bold;
-  }
+  } */
   
-  #inputFormSumary > .ant-input-number-sm input {
+  /* #inputFormSumary > .ant-input-number-sm input {
     height: 16px;
-  }
+  } */
   
-  .classMediaQueryInpunt {
+  /* .classMediaQueryInpunt {
     max-width: 11% !important;
-  }
+  } */
   
-  .styleHoverSummary {
+  /* .styleHoverSummary {
     cursor: pointer;
-  }
+  } */
   
   .styleHoverSummary:hover {
     cursor: pointer;
