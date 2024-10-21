@@ -1,7 +1,13 @@
 import React, { useEffect } from "react";
 import { InputNumber, Button } from "antd";
-
-import { Div_container, Div_calculator, Div_text, Input, Total_div, Total_button, Span } from './index.styles'
+import {
+  Div_container,
+  Div_calculator,
+  Div_text,
+  Total_div,
+  Total_button,
+  Span,
+} from "./index.styles";
 
 function Summary() {
   const [investment, setInvestment] = React.useState({
@@ -103,11 +109,11 @@ function Summary() {
 
   const handleKeyDown = (e) => {
     if (
-      (e.key < '0' || e.key > '9') && 
-      e.key !== 'Backspace' && 
-      e.key !== 'Tab' && 
-      e.key !== 'ArrowLeft' && 
-      e.key !== 'ArrowRight' 
+      (e.key < "0" || e.key > "9") &&
+      e.key !== "Backspace" &&
+      e.key !== "Tab" &&
+      e.key !== "ArrowLeft" &&
+      e.key !== "ArrowRight"
     ) {
       e.preventDefault();
     }
@@ -120,64 +126,85 @@ function Summary() {
         <Div_text>
           <Span>
             Si hace{" "}
-            <Input
+            <InputNumber
               controls={false}
               size="small"
               max={30}
-              value={isTimeFocused ? undefined : investment.time} 
+              value={isTimeFocused ? investment.time : investment.time || 0}
               onChange={(e) => onChangeInput(e, "time")}
               onFocus={() => setIsTimeFocused(true)}
               onBlur={() => setIsTimeFocused(false)}
               onKeyDown={handleKeyDown}
-            />{" "}
+              style={{
+                height: "40px",
+                margin: "0 6px",
+                borderRadius: "10px",
+                border: "2px dashed #ff5f54",
+                backgroundColor: "#fff",
+                padding: "0 10px",
+              }}
+            />
             años hubieras invertido{" "}
-            <Input
+            <InputNumber
               controls={false}
               size="small"
               max={50000}
-              formatter={(value) => `$${value}`.replace(/\B(?=(\d{3})+(?!\d))/g, ",")}
+              formatter={(value) =>
+                `$${value}`.replace(/\B(?=(\d{3})+(?!\d))/g, ",")
+              }
               parser={(value) => value.replace(/\$\s?|(,*)/g, "")}
-              value={isAmountFocused ? undefined : investment.amount} 
+              value={
+                isAmountFocused ? investment.amount : investment.amount || 0
+              } 
               onChange={(e) => onChangeInput(e, "amount")}
               onFocus={() => setIsAmountFocused(true)}
               onBlur={() => setIsAmountFocused(false)}
-              onKeyDown={handleKeyDown} 
-            />{" "}
+              onKeyDown={handleKeyDown}
+              style={{
+                height: "40px",
+                margin: "0 6px",
+                borderRadius: "10px",
+                border: "2px dashed #ff5f54",
+                backgroundColor: "#fff",
+                padding: "0 10px",
+              }}
+            />
             quincenales.
           </Span>
         </Div_text>
         <Div_text>
           <Span>
             A una tasa anual fija del{" "}
-            <Input
+            <InputNumber
               controls={false}
               size="small"
               max={15.1}
-              value={isRateFocused ? undefined : investment.rate} 
+              value={isRateFocused ? undefined : investment.rate}
               onChange={(e) => onChangeInput(e, "rate")}
               onFocus={() => setIsRateFocused(true)}
               onBlur={() => setIsRateFocused(false)}
-              onKeyDown={handleKeyDown} 
+              onKeyDown={handleKeyDown}
+              style={{
+                height: "40px",
+                margin: "0 6px",
+                borderRadius: "10px",
+                border: "2px dashed #ff5f54",
+                backgroundColor: "#fff",
+                padding: "0 10px",
+              }}
             />{" "}
             % hoy tendrías:
           </Span>
         </Div_text>
 
-          <Total_div>
-            <h3>${Number(totalValue).toLocaleString("en-US")} *</h3>
-          </Total_div>
+        <Total_div>
+          <h3>${Number(totalValue).toLocaleString("en-US")} *</h3>
+        </Total_div>
 
-          <Total_button
-            type="primary"
-            onClick={() => calcularValorFinal()}
-          >
-            Calcular
-          </Total_button>
-          
-          
-          
-        </Div_calculator>
-
+        <Total_button type="primary" onClick={() => calcularValorFinal()}>
+          Calcular
+        </Total_button>
+      </Div_calculator>
     </Div_container>
   );
 }

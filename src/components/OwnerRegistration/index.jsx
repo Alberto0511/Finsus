@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { InputNumber, Input, Select, message, Spin, Space, Modal } from "antd";
+import { message, Spin } from "antd";
 import axios from "axios";
 import Catalogs from "./catalog";
 import Swal from "sweetalert";
@@ -27,7 +27,14 @@ let URLSENDMAIL = "https://cpapiforms-58438daf6a11.herokuapp.com/cp/send-mail";
 // let URLSENDMAIL = "http://localhost:3050/cp/send-mail";
 
 function Summary(props) {
-  document.getElementById("body").classList.add("Summary");
+  // Agrega la clase "Summary" al body cuando el componente se monta
+  React.useEffect(() => {
+    const bodyElement = document.getElementById("body");
+    if (bodyElement) {
+      bodyElement.classList.add("Summary");
+    }
+  }, []); // [] asegura que solo se ejecute una vez cuando el componente se monta
+
   const [modelForme, setModelForme] = React.useState([
     {
       id: "kindProperty",
@@ -110,6 +117,7 @@ function Summary(props) {
       display: "none",
     },
   ]);
+
   const [registerProperty, setRegisterProperty] = React.useState({
     kindProperty: "",
     approximateValue: "",
@@ -134,119 +142,6 @@ function Summary(props) {
     // let isMobileDevice = regexp.test(details);
     // setMobile(isMobileDevice)
   }, [modelForme]);
-
-  const renderForm = () => {
-    return (
-      <div className="row">
-        <div className="col-12">
-          <div className="elementoDiv">
-            <label className="classTituloOwner">Registra tu Solicitud</label>
-          </div>
-        </div>
-        <div className="col-12">
-          <div className="elementoDiv">
-            <label
-              style={{ marginLeft: "-13px" }}
-              className="classLabelBodyOwner"
-            >
-              Compártenos tus datos y en breve te contactaremos{" "}
-            </label>
-          </div>
-        </div>
-        <div className="row">
-          {modelForme.map((item, index) => {
-            return (
-              <div
-                key={index}
-                className={`col-12 ${
-                  item.id === "kindProperty" ? "col-12" : "col-md-6"
-                }`}
-                id="selectOwner"
-              >
-                <label
-                  className="classLabelBodyOwner"
-                  style={{ marginBottom: "1.2em" }}
-                >
-                  {item.label}
-                </label>
-                {item.type === "select" ? (
-                  <>
-                    <select
-                      id={item.id}
-                      value={registerProperty[item.id]}
-                      style={{
-                        borderRadius: "6px",
-                        color: "#000",
-                        marginBottom: "1em",
-                        width: "100%",
-                        border: "1px solid #8b9ba0cc",
-                      }}
-                      onChange={(e) => onChangeSelect(e, item.id)}
-                    >
-                      <option value="" disabled>
-                        Seleccione campo
-                      </option>
-                      {item.options.map((option, optIndex) => (
-                        <option key={optIndex} value={option.value}>
-                          {option.label}
-                        </option>
-                      ))}
-                    </select>
-                    <label
-                      id="validateEmailLabel"
-                      style={{ display: item.display, color: "red" }}
-                    >
-                      {item.label} es requerido
-                    </label>
-                  </>
-                ) : (
-                  <>
-                    <input
-                      id="inputOwner"
-                      autoComplete="off"
-                      placeholder={item.placeholder}
-                      value={registerProperty[item.id]}
-                      style={{
-                        borderRadius: "6px",
-                        color: "#000",
-                        marginBottom: "1em",
-                        width: "100%",
-                        fontSize: "14px",
-                        textAlign: "justify",
-                        border: "1px solid #23223f",
-                      }}
-                      onChange={(e) => onChangeInput(e, item.id)}
-                    />
-                    <label
-                      id="validateEmailLabel"
-                      style={{ display: item.display, color: "red" }}
-                    >
-                      {item.label} es requerido
-                    </label>
-                    {item.id === "email" ? (
-                      <label id="validateClassError" style={{ color: "red" }}>
-                        Correo no válido
-                      </label>
-                    ) : null}
-                  </>
-                )}
-              </div>
-            );
-          })}
-          <div className="col-12 col-md-6 divcenter">
-            <button
-              id="btnOwner"
-              className="col-12 classStileButtonOwner"
-              disabled={disableSend}
-              onClick={() => sendForm()}
-            >
-              Enviar
-            </button>
-          </div>
-        </div>
-      </div>
-    );
-  };
 
   const onChangeInput = (e, id) => {
     let value = e.target.value;
@@ -433,11 +328,126 @@ function Summary(props) {
     setModelForme(modelForme);
     setRandom(random + 1);
   };
-
   console.log("mobile", mobile);
+
+  const renderForm = () => {
+    return (
+      <div id="body">
+        <div className="row">
+          <div className="col-12">
+            <div className="elementoDiv">
+              <label className="classTituloOwner">Registra tu Solicitud</label>
+            </div>
+          </div>
+          <div className="col-12">
+            <div className="elementoDiv">
+              <label
+                style={{ marginLeft: "-13px" }}
+                className="classLabelBodyOwner"
+              >
+                Compártenos tus datos y en breve te contactaremos{" "}
+              </label>
+            </div>
+          </div>
+          <div className="row">
+            {modelForme.map((item, index) => {
+              return (
+                <div
+                  key={index}
+                  className={`col-12 ${
+                    item.id === "kindProperty" ? "col-12" : "col-md-6"
+                  }`}
+                  id="selectOwner"
+                >
+                  <label
+                    className="classLabelBodyOwner"
+                    style={{ marginBottom: "1.2em" }}
+                  >
+                    {item.label}
+                  </label>
+                  {item.type === "select" ? (
+                    <>
+                      <select
+                        id={item.id}
+                        value={registerProperty[item.id]}
+                        style={{
+                          borderRadius: "6px",
+                          color: "#000",
+                          marginBottom: "1em",
+                          width: "100%",
+                          border: "1px solid #8b9ba0cc",
+                        }}
+                        onChange={(e) => onChangeSelect(e, item.id)}
+                      >
+                        <option value="" disabled>
+                          Seleccione campo
+                        </option>
+                        {item.options.map((option, optIndex) => (
+                          <option key={optIndex} value={option.value}>
+                            {option.label}
+                          </option>
+                        ))}
+                      </select>
+                      <label
+                        id="validateEmailLabel"
+                        style={{ display: item.display, color: "red" }}
+                      >
+                        {item.label} es requerido
+                      </label>
+                    </>
+                  ) : (
+                    <>
+                      <input
+                        id="inputOwner"
+                        autoComplete="off"
+                        placeholder={item.placeholder}
+                        value={registerProperty[item.id]}
+                        style={{
+                          borderRadius: "6px",
+                          color: "#000",
+                          marginBottom: "1em",
+                          width: "100%",
+                          fontSize: "14px",
+                          textAlign: "justify",
+                          border: "1px solid #23223f",
+                        }}
+                        onChange={(e) => onChangeInput(e, item.id)}
+                      />
+                      <label
+                        id="validateEmailLabel"
+                        style={{ display: item.display, color: "red" }}
+                      >
+                        {item.label} es requerido
+                      </label>
+                      {item.id === "email" ? (
+                        <label id="validateClassError" style={{ color: "red" }}>
+                          Correo no válido
+                        </label>
+                      ) : null}
+                    </>
+                  )}
+                </div>
+              );
+            })}
+            <div className="col-12 col-md-6 divcenter">
+              <button
+                id="btnOwner"
+                className="col-12 classStileButtonOwner"
+                disabled={disableSend}
+                onClick={() => sendForm()}
+              >
+                Enviar
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    );
+  };
+
   return (
     <>
-      <div>
+      <div id="body">
         <div
           style={{ color: "none", marginBottom: "3em", padding: "0em" }}
           className="col-12"

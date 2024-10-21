@@ -1,0 +1,74 @@
+.elementoDiv {
+  width: 50%;
+  float: left;
+}
+
+.classLabelBodyOwner {
+  font-size: 0.9rem !important;
+  font-weight: 400 !important;
+  color: #4a4b65;
+  margin-bottom: 1.5em;
+}
+
+#selectOwner
+  > .ant-select:not(.ant-select-customize-input)
+  .ant-select-selector {
+  color: #23223f !important;
+}
+
+#inputOwner {
+  font-size: 12px !important;
+  color: #4a4b65 !important;
+}
+
+.validateClassError {
+  color: red;
+}
+
+.classStileButtonOwner {
+  height: 3em !important;
+  background: white !important;
+  color: red !important;
+  border: 1px solid #ff5f54 !important;
+  border-radius: 0.7em !important; /* Cambié 0.7 a 0.7em para mayor claridad */
+  margin-top: 1em;
+}
+
+.classStileButtonOwner:hover {
+  background: #ff5f54 !important;
+  color: #fffcfc !important;
+}
+
+#btnOwner {
+  font-size: 16px !important;
+  border-radius: 6px !important;
+}
+
+#btnOwner > .btn-secondary.disabled,
+.btn-secondary:disabled {
+  background-color: #ff5f54 !important;
+  color: #b8b8b8 !important;
+  font-size: 16px !important;
+}
+
+.containerDiv {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.loginContainerFormSummary {
+  background: hsla(0, 0%, 100%, 0.12) !important;
+  color: #fff !important;
+  font-family: "Poppins";
+  box-shadow: none !important;
+}
+
+#loaderClass > span > i {
+  background-color: #ff5f54;
+  width: 46px;
+  height: 46px;
+}
+
+#loaderClass > span {
+  font-size: 94px;
+}

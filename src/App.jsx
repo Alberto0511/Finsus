@@ -1,12 +1,12 @@
 import React from "react";
 
-import ChartContainer from "./components/Summary/index";
-import "./App.css";
+import Owner from "./components/OwnerRegistration/index";
+// import "./App.css";
 
 function App() {
   return (
     <>
-      <ChartContainer />
+      <Owner />
     </>
   );
 }
