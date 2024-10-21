@@ -3,6 +3,13 @@ import { message, Spin } from "antd";
 import axios from "axios";
 import Catalogs from "./catalog";
 import Swal from "sweetalert";
+import {
+  DivElement,
+  ClassLabelBodyOwner,
+  SelectOwner,
+  StyledSelect,
+  StyledLabel,
+} from "./index.styles";
 
 let modelSend = {
   company: "Finsus",
@@ -332,51 +339,36 @@ function Summary(props) {
 
   const renderForm = () => {
     return (
-      <div id="body">
+      <>
         <div className="row">
+          <DivElement>
+            <ClassLabelBodyOwner>Registra tu Solicitud</ClassLabelBodyOwner>
+          </DivElement>
           <div className="col-12">
-            <div className="elementoDiv">
-              <label className="classTituloOwner">Registra tu Solicitud</label>
-            </div>
-          </div>
-          <div className="col-12">
-            <div className="elementoDiv">
-              <label
-                style={{ marginLeft: "-13px" }}
-                className="classLabelBodyOwner"
-              >
-                Compártenos tus datos y en breve te contactaremos{" "}
-              </label>
-            </div>
+            <DivElement>
+              <ClassLabelBodyOwner style={{ marginLeft: "-13px" }}>
+                Compártenos tus datos y en breve te contactaremos
+              </ClassLabelBodyOwner>
+            </DivElement>
           </div>
           <div className="row">
             {modelForme.map((item, index) => {
               return (
-                <div
+                <SelectOwner
                   key={index}
                   className={`col-12 ${
                     item.id === "kindProperty" ? "col-12" : "col-md-6"
                   }`}
                   id="selectOwner"
                 >
-                  <label
-                    className="classLabelBodyOwner"
-                    style={{ marginBottom: "1.2em" }}
-                  >
+                  <classLabelBodyOwner style={{ marginBottom: "1.2em" }}>
                     {item.label}
-                  </label>
+                  </classLabelBodyOwner>
                   {item.type === "select" ? (
                     <>
-                      <select
+                      <StyledSelect
                         id={item.id}
                         value={registerProperty[item.id]}
-                        style={{
-                          borderRadius: "6px",
-                          color: "#000",
-                          marginBottom: "1em",
-                          width: "100%",
-                          border: "1px solid #8b9ba0cc",
-                        }}
                         onChange={(e) => onChangeSelect(e, item.id)}
                       >
                         <option value="" disabled>
@@ -387,13 +379,13 @@ function Summary(props) {
                             {option.label}
                           </option>
                         ))}
-                      </select>
-                      <label
+                      </StyledSelect>
+                      <StyledLabel
                         id="validateEmailLabel"
-                        style={{ display: item.display, color: "red" }}
+                        display={item.display}
                       >
                         {item.label} es requerido
-                      </label>
+                      </StyledLabel>
                     </>
                   ) : (
                     <>
@@ -426,7 +418,7 @@ function Summary(props) {
                       ) : null}
                     </>
                   )}
-                </div>
+                </SelectOwner>
               );
             })}
             <div className="col-12 col-md-6 divcenter">
@@ -441,7 +433,7 @@ function Summary(props) {
             </div>
           </div>
         </div>
-      </div>
+      </>
     );
   };
 
