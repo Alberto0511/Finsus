@@ -72,3 +72,10 @@
 #loaderClass > span {
   font-size: 94px;
 }
+
+
+.divcenter {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
