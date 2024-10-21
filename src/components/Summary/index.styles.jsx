@@ -5,7 +5,11 @@ export const Div_container = styled.div`
   padding: 2em;
   background-color: #fff;
   height: 100%;
-  width: 100%;
+
+  @media (max-width: 768px) {
+    width: 80%; 
+  }
+  
 `;
 
 export const Div_calculator = styled.div`
@@ -20,8 +24,19 @@ export const Div_text = styled.div`
   display: flex;
   justify-content: center;
   margin-bottom: 15px;
-  font-weight: 600;
+  font-size: 20px;
+  font-weight: 700;
   color: #23223f;
+  font-family: 'Arial', sans-serif;
+
+  @media (max-width: 768px) {
+    display: flex;
+    margin-bottom: 6px;
+    font-size: 16px;
+    line-height: 2.0;
+    text-align: center;
+    font-weight: 700;
+  }
 `;
 
 export const Total_div = styled.div`
@@ -40,6 +55,16 @@ export const Total_div = styled.div`
     margin: 0;
     font-weight: 400;
     font-size: 32px;
+  }
+
+  @media (max-width: 768px) {
+    height: 65px;
+    width: 100%;
+    max-width: 500px;
+    display: flex;
+    margin-bottom: 25px;
+    margin-top: 10px;
+    font-family: 'Arial', sans-serif;
   }
 `;
 
@@ -63,5 +88,36 @@ export const Total_button = styled(Button)`
 
 export const Span = styled.span`
   color: #23223f;
-  
+  height: "40px",
+  margin: "0 6px",
+ 
+  @media (max-width: 768px) {
+    display: flex;
+    flex-direction: column; 
+    justify-content: center; 
+    align-items: center; 
+    width: 50%; 
+  }
+`;
+
+
+export const Input = styled(InputNumber)`
+  height: 40px;
+  margin: 0 6px;
+  border-radius: 10px;
+  border: 2px dashed #ff5f54;
+  background-color: #fff;
+  padding: 0 10px;
+  cursor: pointer;
+  color: #23223f;
+  padding-left: 15px;
+  font-size: 20px;
+  font-weight: bold;
+
+  &:active,
+  &:hover,
+  &:focus-within {
+    border: 2px dashed #ff5f54;
+    font-weight: bold;
+  };
 `;
