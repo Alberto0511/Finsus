@@ -9,6 +9,10 @@ import {
   SelectOwner,
   StyledSelect,
   StyledLabel,
+  StyledInputOwner,
+  ButtonDiv,
+  ClassStyleButtonOwner,
+  Row,
 } from "./index.styles";
 
 let modelSend = {
@@ -340,7 +344,7 @@ function Summary(props) {
   const renderForm = () => {
     return (
       <>
-        <div className="row">
+        <div>
           <DivElement>
             <ClassLabelBodyOwner>Registra tu Solicitud</ClassLabelBodyOwner>
           </DivElement>
@@ -351,16 +355,10 @@ function Summary(props) {
               </ClassLabelBodyOwner>
             </DivElement>
           </div>
-          <div className="row">
+          <Row>
             {modelForme.map((item, index) => {
               return (
-                <SelectOwner
-                  key={index}
-                  className={`col-12 ${
-                    item.id === "kindProperty" ? "col-12" : "col-md-6"
-                  }`}
-                  id="selectOwner"
-                >
+                <SelectOwner key={index}>
                   <classLabelBodyOwner style={{ marginBottom: "1.2em" }}>
                     {item.label}
                   </classLabelBodyOwner>
@@ -389,49 +387,39 @@ function Summary(props) {
                     </>
                   ) : (
                     <>
-                      <input
+                      <StyledInputOwner
                         id="inputOwner"
                         autoComplete="off"
                         placeholder={item.placeholder}
                         value={registerProperty[item.id]}
-                        style={{
-                          borderRadius: "6px",
-                          color: "#000",
-                          marginBottom: "1em",
-                          width: "100%",
-                          fontSize: "14px",
-                          textAlign: "justify",
-                          border: "1px solid #23223f",
-                        }}
                         onChange={(e) => onChangeInput(e, item.id)}
                       />
-                      <label
+                      <StyledLabel
                         id="validateEmailLabel"
-                        style={{ display: item.display, color: "red" }}
+                        display={item.display}
                       >
                         {item.label} es requerido
-                      </label>
+                      </StyledLabel>
                       {item.id === "email" ? (
-                        <label id="validateClassError" style={{ color: "red" }}>
+                        <StyledLabel id="validateClassError">
                           Correo no válido
-                        </label>
+                        </StyledLabel>
                       ) : null}
                     </>
                   )}
                 </SelectOwner>
               );
             })}
-            <div className="col-12 col-md-6 divcenter">
-              <button
+            <ButtonDiv>
+              <ClassStyleButtonOwner
                 id="btnOwner"
-                className="col-12 classStileButtonOwner"
                 disabled={disableSend}
                 onClick={() => sendForm()}
               >
                 Enviar
-              </button>
-            </div>
-          </div>
+              </ClassStyleButtonOwner>
+            </ButtonDiv>
+          </Row>
         </div>
       </>
     );
