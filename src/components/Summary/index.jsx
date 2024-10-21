@@ -7,6 +7,7 @@ import {
   Total_div,
   Total_button,
   Span,
+  Input,
 } from "./index.styles";
 
 function Summary() {
@@ -126,7 +127,7 @@ function Summary() {
         <Div_text>
           <Span>
             Si hace{" "}
-            <InputNumber
+            <Input
               controls={false}
               size="small"
               max={30}
@@ -136,16 +137,12 @@ function Summary() {
               onBlur={() => setIsTimeFocused(false)}
               onKeyDown={handleKeyDown}
               style={{
-                height: "40px",
-                margin: "0 6px",
-                borderRadius: "10px",
-                border: "2px dashed #ff5f54",
-                backgroundColor: "#fff",
-                padding: "0 10px",
+                width: "120px",
+                fontWeight: "1000",
               }}
             />
             años hubieras invertido{" "}
-            <InputNumber
+            <Input
               controls={false}
               size="small"
               max={50000}
@@ -161,12 +158,8 @@ function Summary() {
               onBlur={() => setIsAmountFocused(false)}
               onKeyDown={handleKeyDown}
               style={{
-                height: "40px",
-                margin: "0 6px",
-                borderRadius: "10px",
-                border: "2px dashed #ff5f54",
-                backgroundColor: "#fff",
-                padding: "0 10px",
+                width: "150px",
+                fontWeight: "1000",
               }}
             />
             quincenales.
@@ -175,7 +168,7 @@ function Summary() {
         <Div_text>
           <Span>
             A una tasa anual fija del{" "}
-            <InputNumber
+            <Input
               controls={false}
               size="small"
               max={15.1}
@@ -185,12 +178,8 @@ function Summary() {
               onBlur={() => setIsRateFocused(false)}
               onKeyDown={handleKeyDown}
               style={{
-                height: "40px",
-                margin: "0 6px",
-                borderRadius: "10px",
-                border: "2px dashed #ff5f54",
-                backgroundColor: "#fff",
-                padding: "0 10px",
+                width: "100px",
+                fontWeight: "1000",
               }}
             />{" "}
             % hoy tendrías:

@@ -1,6 +1,6 @@
 import React from "react";
 
-import Owner from "./components/OwnerRegistration/index";
+import Owner from "./components/Summary/index";
 // import "./App.css";
 
 function App() {
