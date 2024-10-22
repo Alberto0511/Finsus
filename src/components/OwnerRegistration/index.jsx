@@ -13,6 +13,10 @@ import {
   ButtonDiv,
   ClassStyleButtonOwner,
   Row,
+  Subtitle,
+  Label,
+  CenteredDiv,
+  CubeDiv,
 } from "./index.styles";
 
 let modelSend = {
@@ -33,7 +37,7 @@ let modelSend = {
 };
 
 let URLSEND = "https://api.beta.llavecredit.com/lead-put/";
-// let URLSEND = "https://api.llavecredit.com/lead_put";
+//let URLSEND = "https://api.llavecredit.com/lead_put";
 let URLSENDMAIL = "https://cpapiforms-58438daf6a11.herokuapp.com/cp/send-mail";
 // let URLSENDMAIL = "http://localhost:3050/cp/send-mail";
 
@@ -344,83 +348,74 @@ function Summary(props) {
   const renderForm = () => {
     return (
       <>
-        <div>
-          <DivElement>
+        <CenteredDiv>
+          <CubeDiv>
             <ClassLabelBodyOwner>Registra tu Solicitud</ClassLabelBodyOwner>
-          </DivElement>
-          <div className="col-12">
-            <DivElement>
-              <ClassLabelBodyOwner style={{ marginLeft: "-13px" }}>
-                Compártenos tus datos y en breve te contactaremos
-              </ClassLabelBodyOwner>
-            </DivElement>
-          </div>
-          <Row>
-            {modelForme.map((item, index) => {
-              return (
-                <SelectOwner key={index}>
-                  <classLabelBodyOwner style={{ marginBottom: "1.2em" }}>
-                    {item.label}
-                  </classLabelBodyOwner>
-                  {item.type === "select" ? (
-                    <>
-                      <StyledSelect
-                        id={item.id}
-                        value={registerProperty[item.id]}
-                        onChange={(e) => onChangeSelect(e, item.id)}
-                      >
-                        <option value="" disabled>
-                          Seleccione campo
-                        </option>
-                        {item.options.map((option, optIndex) => (
-                          <option key={optIndex} value={option.value}>
-                            {option.label}
-                          </option>
-                        ))}
-                      </StyledSelect>
-                      <StyledLabel
-                        id="validateEmailLabel"
-                        display={item.display}
-                      >
-                        {item.label} es requerido
-                      </StyledLabel>
-                    </>
-                  ) : (
-                    <>
-                      <StyledInputOwner
-                        id="inputOwner"
-                        autoComplete="off"
-                        placeholder={item.placeholder}
-                        value={registerProperty[item.id]}
-                        onChange={(e) => onChangeInput(e, item.id)}
-                      />
-                      <StyledLabel
-                        id="validateEmailLabel"
-                        display={item.display}
-                      >
-                        {item.label} es requerido
-                      </StyledLabel>
-                      {item.id === "email" ? (
-                        <StyledLabel id="validateClassError">
-                          Correo no válido
+            <Subtitle>
+              Compártenos tus datos y en breve te contactaremos
+            </Subtitle>
+            <Row>
+              {modelForme.map((item, index) => {
+                return (
+                  <SelectOwner key={index}>
+                    <Label>{item.label}</Label>
+                    {item.type === "select" ? (
+                      <>
+                        <StyledSelect
+                          id={item.id}
+                          value={registerProperty[item.id]}
+                          onChange={(e) => onChangeSelect(e, item.id)}
+                        >
+                          <option value="" disabled selected hidden></option>
+                          {item.options.map((option, optIndex) => (
+                            <option key={optIndex} value={option.value}>
+                              {option.label}
+                            </option>
+                          ))}
+                        </StyledSelect>
+                        <StyledLabel
+                          id="validateEmailLabel"
+                          display={item.display}
+                        >
+                          {item.label} es requerido
                         </StyledLabel>
-                      ) : null}
-                    </>
-                  )}
-                </SelectOwner>
-              );
-            })}
-            <ButtonDiv>
-              <ClassStyleButtonOwner
-                id="btnOwner"
-                disabled={disableSend}
-                onClick={() => sendForm()}
-              >
-                Enviar
-              </ClassStyleButtonOwner>
-            </ButtonDiv>
-          </Row>
-        </div>
+                      </>
+                    ) : (
+                      <>
+                        <StyledInputOwner
+                          id="inputOwner"
+                          autoComplete="off"
+                          placeholder={item.placeholder}
+                          value={registerProperty[item.id]}
+                          onChange={(e) => onChangeInput(e, item.id)}
+                        />
+                        <StyledLabel
+                          id="validateEmailLabel"
+                          display={item.display}
+                        >
+                          {item.label} es requerido
+                        </StyledLabel>
+                        {item.id === "email" ? (
+                          <StyledLabel id="validateClassError">
+                            Correo no válido
+                          </StyledLabel>
+                        ) : null}
+                      </>
+                    )}
+                  </SelectOwner>
+                );
+              })}
+              <ButtonDiv>
+                <ClassStyleButtonOwner
+                  disabled={disableSend}
+                  onClick={() => sendForm()}
+                >
+                  Enviar
+                </ClassStyleButtonOwner>
+              </ButtonDiv>
+            </Row>
+          </CubeDiv>
+        </CenteredDiv>
       </>
     );
   };
