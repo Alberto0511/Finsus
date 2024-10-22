@@ -129,7 +129,7 @@ function Summary() {
             Si hace{" "}
             <Input
               controls={false}
-              size="small"
+              size="medium"
               max={30}
               value={isTimeFocused ? investment.time : investment.time || 0}
               onChange={(e) => onChangeInput(e, "time")}
@@ -144,7 +144,7 @@ function Summary() {
             años hubieras invertido{" "}
             <Input
               controls={false}
-              size="small"
+              size="medium"
               max={50000}
               formatter={(value) =>
                 `$${value}`.replace(/\B(?=(\d{3})+(?!\d))/g, ",")
@@ -170,7 +170,7 @@ function Summary() {
             A una tasa anual fija del{" "}
             <Input
               controls={false}
-              size="small"
+              size="medium"
               max={15.1}
               value={isRateFocused ? undefined : investment.rate}
               onChange={(e) => onChangeInput(e, "rate")}

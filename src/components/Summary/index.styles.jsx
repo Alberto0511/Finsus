@@ -7,9 +7,8 @@ export const Div_container = styled.div`
   height: 100%;
 
   @media (max-width: 768px) {
-    width: 80%; 
+    width: 80%;
   }
-  
 `;
 
 export const Div_calculator = styled.div`
@@ -29,13 +28,19 @@ export const Div_text = styled.div`
   color: #23223f;
   font-family: 'Arial', sans-serif;
 
-  @media (max-width: 768px) {
+  @media (max-width: 390px) {s
     display: flex;
     margin-bottom: 6px;
     font-size: 16px;
     line-height: 2.0;
     text-align: center;
     font-weight: 700;
+  }
+
+  @media (max-width: 768px) {
+    margin-bottom: 3px;
+    line-height: 2.6;
+    text-align: center;
   }
 `;
 
@@ -55,6 +60,7 @@ export const Total_div = styled.div`
     margin: 0;
     font-weight: 400;
     font-size: 32px;
+    font-family: "Arial", sans-serif;
   }
 
   @media (max-width: 768px) {
@@ -64,7 +70,7 @@ export const Total_div = styled.div`
     display: flex;
     margin-bottom: 25px;
     margin-top: 10px;
-    font-family: 'Arial', sans-serif;
+    font-family: "Arial", sans-serif;
   }
 `;
 
@@ -100,7 +106,6 @@ export const Span = styled.span`
   }
 `;
 
-
 export const Input = styled(InputNumber)`
   height: 40px;
   margin: 0 6px;
@@ -119,5 +124,5 @@ export const Input = styled(InputNumber)`
   &:focus-within {
     border: 2px dashed #ff5f54;
     font-weight: bold;
-  };
+  }
 `;
