@@ -165,7 +165,7 @@ function IfHad(props) {
 
           <div>
             <Row >
-              <div style={{ flex: "1" }}>
+              <div style={{ flex: "1",  }}>
                 <label >MONTO INVERTIDO</label>
               </div>
               <div style={{ flex: "2", }}>
@@ -199,7 +199,7 @@ function IfHad(props) {
                       label: "QUINCENALES",
                     },
                   ]}
-                  style={{ backgroundColor: "#ff0000", color: "#fff" }}
+                  
                 />
               </div>
             </Row>
