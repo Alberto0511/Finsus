@@ -17,7 +17,7 @@ export const MainDiv = styled.div`
   justify-content: center; 
   align-items: center; 
 
-  position: absolute; 
+  position: fixed; 
   top: 0; 
   left: 0; 
   
@@ -73,7 +73,7 @@ export const Row = styled.div`
 
 
 export const InputStyled = styled(InputNumber)`
-  color: #ff0000; 
+  color: #fff; 
   border-radius: 5px;
   background: transparent;
   width: 75%;
@@ -87,8 +87,11 @@ export const InputStyled = styled(InputNumber)`
     background: transparent;
     border-color: #fff;
     cursor: pointer;
-    color: #ff0000; 
-  }
+    color: #fff; 
+  };
+  .ant-input-number-input {
+    color: #fff; 
+  };
 `;
 
 
@@ -98,18 +101,28 @@ export const SelectStyled = styled(Select)`
   border-radius: 5px;
   color: #fff !important;  
 
+  &:active,
+  &:hover,
+  &:focus-within {
+    background-color: rgba(255, 255, 255, 0.1) !important;
+    border-color: #fff;
+    cursor: pointer;
+    color: #ff0000; 
+  };
+
   .ant-select-selector {
-    background-color: #3e3d56 !important; 
-    border: 1px solid #fff !important; 
-    color: #fff !important; 
+    background-color: #3e3d56 !important;
+    border: 1px solid #fff !important;
+    color: #fff !important;
   }
 
-      &:hover {
-        background-color: rgba(255, 255, 255, 0.1) !important;
-        color: #fff !important; 
-      }
-    
-  
+  .ant-select-selection-item {
+    color: #fff !important; /* Color de texto para el item seleccionado */
+  }
+
+  .ant-select-arrow {
+    color: #fff !important; /* Color de la flecha */
+  }
 `;
 
 export const ButtonContainer = styled.div`
@@ -122,15 +135,20 @@ export const ButtonContainer = styled.div`
 
 export const ButtonStyled = styled.button`
   width: 40%;
+  height: 2.5em;
   padding: 1em;
-  background-color: #020e3a;
+  background-color: #001254;
   color: #fff;
   border: 1px solid #fff;
   border-radius: 6px;
   margin-top: 2em;
   &:hover{
     background-color: #8ab7e9;
-  }
+  };
+  font-size: 14px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `;
 
 
