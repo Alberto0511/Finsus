@@ -162,12 +162,12 @@ function Summary() {
                 fontWeight: "1000",
               }}
             />
-            quincenales.
+            quincenales
           </Span>
         </Div_text>
         <Div_text>
           <Span>
-            A una tasa anual fija del{" "}
+            a una tasa anual fija del{" "}
             <Input
               controls={false}
               size="medium"

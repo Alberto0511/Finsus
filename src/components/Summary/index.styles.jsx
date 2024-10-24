@@ -58,6 +58,7 @@ export const Total_div = styled.div`
   h3 {
     color: #23223f;
     margin: 0;
+    font-family: 'Arial';
     font-weight: 400;
     font-size: 32px;
     font-family: "Arial", sans-serif;
@@ -116,8 +117,9 @@ export const Input = styled(InputNumber)`
   cursor: pointer;
   color: #23223f;
   padding-left: 15px;
+  font-family: 'Arial';
   font-size: 20px;
-  font-weight: bold;
+  font-weight: 'bold';
 
   &:active,
   &:hover,
