@@ -17,7 +17,7 @@ export const MainDiv = styled.div`
   justify-content: center; 
   align-items: center; 
 
-  position: fixed; 
+  position: absolute; 
   top: 0; 
   left: 0; 
 `;
@@ -34,8 +34,13 @@ export const DivContainer = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: center;
-  
   width: 100%;
+
+  @media (max-width: 768px) {
+    flex-direction: column; 
+    
+  }
+
 `;
 
 
@@ -54,13 +59,19 @@ export const LoginContainerForm = styled.div`
   &::before {
     filter: blur(5px);
   }
-`;
 
+ @media (max-width: 768px) {
+    width: 70%; 
+    margin-left: auto;  
+    margin-right: auto; 
+    
+  }
+
+`;
 
 export const Row = styled.div`
   height: 50px;
   display: flex;
- 
   flex-direction: row;
   justify-content: left;
   align-items: center;
@@ -68,7 +79,60 @@ export const Row = styled.div`
   font-size: 12px;
   margin: 1em;
   padding-right: 1em;
+  
+
+  @media (max-width: 1024px) {
+    flex-direction: column; 
+    align-items: flex-start; 
+    padding-bottom: 1.5em; 
+
+    div {
+      width: 100%; 
+    }
+
+    label {
+      margin-bottom: 4px; 
+      font-size: 14px;
+      color: #fff; 
+    }
+  }
+
+  @media (max-width: 768px) {
+    flex-direction: row; 
+    align-items: center; 
+    padding-bottom: 0.5em; 
+    padding-left: 1.0em; 
+
+    div {
+      width: 90%; 
+    }
+
+    label {
+      margin-right: 1em;
+      align-self: center; 
+    }
+  }
+
+ @media (max-width: 430px) {
+    flex-direction: column; 
+    align-items: flex-start; 
+    padding-bottom: 1.5em; 
+
+    div {
+      width: 100%; 
+      margin-left: 0; 
+      padding-left: 0; 
+    }
+
+    label {
+      margin-bottom: 4px; 
+      font-size: 14px; 
+      color: #fff; 
+    }
+  }
+
 `;
+
 
 
 export const InputStyled = styled(InputNumber)`
@@ -91,6 +155,13 @@ export const InputStyled = styled(InputNumber)`
   .ant-input-number-input {
     color: #fff; 
   };
+
+ @media (max-width: 768px) {
+    margin-left: 3em; 
+   
+  }
+
+
 `;
 
 
@@ -116,12 +187,19 @@ export const SelectStyled = styled(Select)`
   }
 
   .ant-select-selection-item {
-    color: #fff !important; /* Color de texto para el item seleccionado */
+    color: #fff !important; 
   }
 
   .ant-select-arrow {
-    color: #fff !important; /* Color de la flecha */
+    color: #fff !important; 
   }
+
+ @media (max-width: 768px) {
+    margin-left: 3em; 
+     
+  }
+  
+  
 `;
 
 export const ButtonContainer = styled.div`
@@ -129,6 +207,9 @@ export const ButtonContainer = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+
+
+  
 `;
 
 
@@ -148,6 +229,13 @@ export const ButtonStyled = styled.button`
   display: flex;
   justify-content: center;
   align-items: center;
+
+  
+   @media (max-width: 768px) {
+    width: 70%; 
+    margin-left: auto;  
+    margin-right: auto; 
+  }
 `;
 
 
@@ -168,6 +256,15 @@ export const Card = styled.div`
   b{
     margin-top: 2em;  
   }
+
+   @media (max-width: 768px) {
+    width: 70%; 
+    margin-left: auto;  
+    margin-right: auto; 
+    margin-top: 1em;  
+    height: 20em;
+    line-height: 1.9;
+  }
 `;
 
 
@@ -176,7 +273,16 @@ export const ResultsDiv = styled.div`
   flex-direction: row;
   width: 100%;
   margin-top: 2em;
-`
+
+ @media (max-width: 768px) {
+    flex-direction: column;
+    align-items: center;
+    font-size: 16px;
+    
+  }
+
+
+`;
 
 
 export const Result = styled.div`
@@ -187,4 +293,9 @@ export const Result = styled.div`
   label{
     margin-bottom: 4px;
   }
-`
+
+  
+`;
+
+
+

@@ -1,0 +1,123 @@
+body {
+    background-color: #23223f;
+    color: white;
+    font-family: Arial, sans-serif;
+  }
+  
+  .investment-simulator {
+    max-width: 1000px;
+    margin: 2em auto;
+    padding: 1em;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(1px);
+    border: 2px solid rgba(255, 255, 255, 0.8);
+  }
+  
+  .header {
+    color: #fff;
+    text-align: center;
+  }
+  
+  .investment-header {
+    margin-bottom: 1em;
+  }
+  
+  .investment-description {
+    color: #fff;
+    margin-bottom: 0.5em;
+    text-align: center;
+  }
+  
+  .input-number {
+    border-radius: 6px;
+    background: transparent;
+    color: #fff;
+    margin-bottom: 1em;
+    padding: 0.5em;
+    border: 1px solid #fff;
+    width: 100%;
+  }
+  
+  .minimum-amount {
+    display: block;
+    color: #fff;
+    font-size: 0.9em;
+    font-weight: bold;
+    text-align: center;
+  }
+  
+  .margin-bottom {
+    margin-bottom: 1em;
+  }
+  
+  .investment-details {
+    margin-top: 1em;
+  }
+  
+  .investment-online-status {
+    margin-bottom: 1em;
+    color: #fff;
+    font-weight: bold;
+  }
+  
+  .investment-results {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .investment-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5em;
+    border: 1px solid #444;
+    border-radius: 6px;
+    margin-bottom: 0.5em;
+    background-color: #444;
+    transition: background-color 0.3s;
+  }
+  
+  .investment-item.active {
+    background-color: #ff5f54;
+  }
+  
+  .investment-period {
+    color: #fff;
+  }
+  
+  .investment-yield {
+    color: #fff;
+  }
+  
+  .hidden-text {
+    color: transparent;
+  }
+  
+  .gat-container {
+    margin-top: 2em;
+    margin-left: -3em;
+    width: 120%; 
+    display: flex; 
+    align-items: center; 
+  }
+  
+  .title {
+    margin-bottom: 0; 
+    font-weight: bold; 
+    text-align: left; 
+    flex: 1; 
+  }
+  
+  .gat-items {
+    display: flex;
+    flex-wrap: wrap; 
+    justify-content: flex-start; 
+    margin-left: 0.5em; 
+  }
+  
+  .gat-item {
+    margin:  0.3em;
+    flex: 0 1 auto; 
+    font-weight: bold; 
+  }
+  
