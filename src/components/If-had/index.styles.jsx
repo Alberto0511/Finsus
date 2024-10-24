@@ -2,18 +2,25 @@ import styled from "styled-components";
 import { InputNumber, Select } from "antd";
 
 
-export const MainDiv = styled.div`
-  background: #23223f;
-  height: 100%;
-  width: 100%;
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
 
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+
+export const MainDiv = styled.div`
+ background: #23223f; 
+  min-height: 100vh; 
+  width: 100vw; 
+  margin: 0; 
+  padding: 0; 
+  box-sizing: border-box; 
+
+  display: flex; 
+  flex-direction: column; 
+  justify-content: center; 
+  align-items: center; 
+
+  position: absolute; 
+  top: 0; 
+  left: 0; 
+  
 `;
 
 
@@ -28,7 +35,7 @@ export const DivContainer = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: center;
- 
+  
   width: 100%;
 `;
 
@@ -54,6 +61,7 @@ export const LoginContainerForm = styled.div`
 export const Row = styled.div`
   height: 50px;
   display: flex;
+ 
   flex-direction: row;
   justify-content: left;
   align-items: center;
@@ -85,13 +93,24 @@ export const InputStyled = styled(InputNumber)`
 
 
 export const SelectStyled = styled(Select)`
-  background: transparent;  
-  width: 75%;
+ width: 75%;
   height: 2.5em;
   border-radius: 5px;
-  color: #fff;
-`;
+  color: #fff !important;  
 
+  .ant-select-selector {
+    background-color: #3e3d56 !important; 
+    border: 1px solid #fff !important; 
+    color: #fff !important; 
+  }
+
+      &:hover {
+        background-color: rgba(255, 255, 255, 0.1) !important;
+        color: #fff !important; 
+      }
+    
+  
+`;
 
 export const ButtonContainer = styled.div`
   display: flex;
