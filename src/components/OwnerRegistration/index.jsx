@@ -354,13 +354,13 @@ function Summary(props) {
             <Subtitle>
               Compártenos tus datos y en breve te contactaremos
             </Subtitle>
-            <Row>
+            <Row id={"row"}>
               {modelForme.map((item, index) => {
                 return (
-                  <SelectOwner key={index}>
+                  <SelectOwner key={index} id={item.id}>
                     <Label>{item.label}</Label>
                     {item.type === "select" ? (
-                      <>
+                      <div>
                         <StyledSelect
                           id={item.id}
                           value={registerProperty[item.id]}
@@ -379,9 +379,9 @@ function Summary(props) {
                         >
                           {item.label} es requerido
                         </StyledLabel>
-                      </>
+                      </div>
                     ) : (
-                      <>
+                      <div>
                         <StyledInputOwner
                           id="inputOwner"
                           autoComplete="off"
@@ -400,7 +400,7 @@ function Summary(props) {
                             Correo no válido
                           </StyledLabel>
                         ) : null}
-                      </>
+                      </div>
                     )}
                   </SelectOwner>
                 );
