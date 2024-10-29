@@ -8,6 +8,9 @@ import {
   HeaderTable ,
   TableInversion,
   SubtitleTable,
+  MinimumAmount,
+  InputNumberStyled,
+  ResultTable,
 } from "./index.styles";
 
 
@@ -184,10 +187,10 @@ function Calculadora() {
             <SubtitleTable className="investment-description">
               Escribe una cantidad y descubre su rendimiento según el plazo.
             </SubtitleTable>
-            <InputNumber
-              id="inputNumberAnt"
+
+
+            <InputNumberStyled
               controls={false}
-              className="input-number"
               min={100}
               value={valueInversion}
               defaultValue={100}
@@ -197,9 +200,13 @@ function Calculadora() {
               parser={(value) => value.replace(/\$\s?|(,*)/g, "")}
               onChange={onChange}
             />
-            <span className="minimum-amount">El monto mínimo es de $100.00</span>
+
+          
+
+
+            <MinimumAmount className="minimum-amount">El monto mínimo es de $100.00</MinimumAmount>
           </InvestmentHeader>
-          <div className="investment-details">
+          <ResultTable className="investment-details">
             <div className="investment-online-status">{onlines()}</div>
             <div className="investment-results">
               {dataReinversion.map((data, i) => (
@@ -219,7 +226,7 @@ function Calculadora() {
             <span className="hidden-text"></span>
             {getGat("GAT REAL", "gatR")}
             {getGat("GAT NOMINAL", "gatN")}
-          </div>
+          </ResultTable>
       </TableInversion>
     </MainDiv>
   );
