@@ -389,7 +389,7 @@ function Summary(props) {
                           value={registerProperty[item.id]}
                           onChange={(e) => onChangeInput(e, item.id)}
                         />
-                        <StyledLabel
+                        <StyledLabel 
                           id="validateEmailLabel"
                           display={item.display}
                         >
