@@ -34,20 +34,59 @@ text-align: center;
 `;
 
 export const TableInversion = styled.div`
- color: #fff; /* Color blanco */
+ color: #fff; 
   background-color: rgba(255, 255, 255, 0.2);
-  padding: 1em; /* Espaciado interno */
-  border-radius: 5px; /* Bordes redondeados */
-  border: 2px solid #fff; /* Borde blanco */
-    
+  padding: 1em; 
+  border-radius: 5px; 
+  border: 2px solid #fff; 
+  margin: 3em;  
 `;
 
 export const SubtitleTable = styled.p`
-color: #fff; /* Color blanco */
-margin-bottom: 0.5em; /* Margen inferior */
-text-align: center; /* Alineación centrada */
+color: #fff;
+margin-bottom: 0.5em; 
+text-align: center; 
 `;
 
+export const MinimumAmount = styled.span`
+ display: block;
+  color: #fff; 
+  font-size: 0.9em; 
+  font-weight: bold; 
+  text-align: center; 
+`;
+
+export const InputNumberStyled = styled(InputNumber)`
+ width: 100%;
+ border-radius: 6px;
+  background: transparent !important; 
+  color: #ffffff !important; 
+  margin-bottom: 1em;
+  padding: 0.5em;
+  border: 1px solid #ffffff !important; 
+
+
+  &:hover,
+  &:focus,
+  &:active {
+    background-color: transparent !important; 
+    border-color: #fff; 
+    box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.5); 
+    outline: none; 
+  }
+
+  & .ant-input-number-input {
+    color: #ffffff !important;
+    text-align: center; 
+  }
+
+`;
+
+export const ResultTable = styled.div`
+
+  font-size: 0.5em; 
+  line-height: 2.0; 
+`;
 
 
 
