@@ -66,6 +66,9 @@ body {
     flex-direction: column;
   }
   
+
+
+
   .investment-item {
     display: flex;
     justify-content: space-between;
@@ -76,6 +79,13 @@ body {
     background-color: #444;
     transition: background-color 0.3s;
   }
+  
+
+
+
+
+
+
   
   .investment-item.active {
     background-color: #ff5f54;

@@ -11,6 +11,16 @@ import {
   MinimumAmount,
   InputNumberStyled,
   ResultTable,
+  Investment_results,
+  Investment_online_status,
+  Investment_item,
+  Investment_period,
+  Investment_yield,
+  Hidden_text,
+  Gat_container,
+  Gat_title,
+  Gat_item,
+  Help_text,
 } from "./index.styles";
 
 
@@ -160,20 +170,21 @@ function Calculadora() {
   const getGat = (title, type) => {
     console.log("getGat");
     return (
-      <div className="gat-container">
-        <div className="title">
-          <span className="helpText">{title}</span>
-        </div>
-        <div className="gat-items">
+      <Gat_container className="gat-container">
+        
+          <Gat_title className="title">
+            <Help_text className="helpText">{title}</Help_text>
+          </Gat_title>
+
           {dataReinversion.map((e, index) => {
             return (
-              <div key={index} className="gat-item">
-                <span className="helpText">{e[type]}</span>
-              </div>
+              <Gat_item key={index} className="gat-item">
+                <Help_text className="helpText">{e[type]}</Help_text>
+              </Gat_item>
             );
           })}
-        </div>
-      </div>
+        
+      </Gat_container>
     );
   };
 
@@ -207,23 +218,27 @@ function Calculadora() {
             <MinimumAmount className="minimum-amount">El monto mínimo es de $100.00</MinimumAmount>
           </InvestmentHeader>
           <ResultTable className="investment-details">
-            <div className="investment-online-status">{onlines()}</div>
-            <div className="investment-results">
+            
+            
+            <Investment_results className="investment-results">
               {dataReinversion.map((data, i) => (
-                <div
+                <Investment_item
                   key={i}
                   className={`investment-item ${isActive ? "active" : ""} ${
                     data.ClassName
                   }`}
                 >
-                  <div className="investment-period">{data.Plazo}</div>
-                  <div className="investment-yield" id="prime">
+                  <Investment_period className="investment-period">{data.Plazo}</Investment_period>
+                  <Investment_yield className="investment-yield" id="prime">
                     <span title={data.Rendimiento}>{data.Rendimiento}</span>
-                  </div>
-                </div>
+                  </Investment_yield>
+                </Investment_item>
               ))}
-            </div>
-            <span className="hidden-text"></span>
+            </Investment_results>
+
+            <Investment_online_status className="investment-online-status">{onlines()}</Investment_online_status>
+
+            <Hidden_text className="hidden-text"></Hidden_text>
             {getGat("GAT REAL", "gatR")}
             {getGat("GAT NOMINAL", "gatN")}
           </ResultTable>

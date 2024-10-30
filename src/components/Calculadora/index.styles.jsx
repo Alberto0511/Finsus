@@ -35,11 +35,12 @@ text-align: center;
 
 export const TableInversion = styled.div`
  color: #fff; 
-  background-color: rgba(255, 255, 255, 0.2);
-  padding: 1em; 
-  border-radius: 5px; 
-  border: 2px solid #fff; 
-  margin: 3em;  
+background-color: rgba(255, 255, 255, 0.2);
+padding: 1em; 
+border-radius: 5px; 
+border: 2px solid #fff; 
+margin: 3em;  
+width: 60%;
 `;
 
 export const SubtitleTable = styled.p`
@@ -87,6 +88,105 @@ export const ResultTable = styled.div`
   font-size: 0.5em; 
   line-height: 2.0; 
 `;
+
+
+export const Investment_online_status = styled.div`
+  margin-bottom: 1em;
+  color: #fff;
+  font-weight: bold;
+  }
+`;
+
+
+export const Investment_item = styled.div`
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5em;
+  border: 1px solid #444;
+  border-radius: 6px;
+  margin-bottom: 0.5em;
+  background-color: #444;
+  transition: background-color 0.3s;
+  }
+`;
+
+
+export const Investment_period = styled.div`
+  color: #fff;
+  }
+`;
+
+
+export const Investment_results = styled.div`
+  color: #fff;
+  }
+`;
+
+
+export const Investment_yield = styled.div`
+  color: #fff;
+  }
+`;
+
+
+export const Hidden_text = styled.span`
+  color: transparent;
+  }
+`;
+
+
+export const Gat_container = styled.div`
+  margin-top: 2em;
+  width: 100%; 
+  display: flex; 
+  flex-direction: row;
+  flex-wrap: wrap; 
+  justify-content: start;
+  font-size: 12px;
+  font-family: 'Arial';
+  }
+`;
+
+
+// export const Gat_items = styled.div`
+//   display: flex;
+//   flex-wrap: wrap; 
+//   justify-content: space-around;
+//   width: 100%;
+//   margin: 0px 10px 0px 10px; 
+// }
+// `;
+
+export const Gat_title = styled.div`
+  margin: 0px 65px 0px 70px; 
+  font-weight: bold; 
+  text-align: center;
+  width: 10%;
+  display: flex; 
+  flex-wrap: wrap;
+}
+`;
+
+
+export const Gat_item = styled.div`
+  margin: 0px 5px 0px 5px; 
+  font-weight: bold; 
+  width: 7%;
+  height: 5%;
+}
+`;
+
+
+export const Help_text = styled.span`
+  margin: 0px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap; 
+  text-align: center;
+  }
+`;
+
+
 
 
 
