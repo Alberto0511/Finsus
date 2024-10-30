@@ -94,6 +94,8 @@ export const Investment_online_status = styled.div`
   margin-bottom: 1em;
   color: #fff;
   font-weight: bold;
+  display: flex;
+  flex-direction: center;
   }
 `;
 
@@ -105,22 +107,39 @@ export const Investment_item = styled.div`
   border: 1px solid #444;
   border-radius: 6px;
   margin-bottom: 0.5em;
-  background-color: #444;
+  margin-left: 2em;
+  margin-right: 2em;
+  max-width: 80%;
+  width: ${({ isActive, size }) => (isActive ? size : '0%')};
+  background: ${({ isActive }) => (isActive ? 'linear-gradient(to right, #fff, #ff5f54);' : '#444')};
   transition: background-color 0.3s;
-  }
+  };
 `;
 
 
 export const Investment_period = styled.div`
   color: #fff;
+  width: 40px;
   }
 `;
 
 
 export const Investment_results = styled.div`
   color: #fff;
+  display: flex;
+  flex-direction: column;
+  jusitify-content: center;
+  algin-items: center;
   }
 `;
+
+
+export const Results_container = styled.div`
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 30px;
+`
 
 
 export const Investment_yield = styled.div`

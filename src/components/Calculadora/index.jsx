@@ -21,6 +21,7 @@ import {
   Gat_title,
   Gat_item,
   Help_text,
+  Results_container,
 } from "./index.styles";
 
 
@@ -222,21 +223,28 @@ function Calculadora() {
             
             <Investment_results className="investment-results">
               {dataReinversion.map((data, i) => (
-                <Investment_item
-                  key={i}
-                  className={`investment-item ${isActive ? "active" : ""} ${
-                    data.ClassName
-                  }`}
-                >
+                <Results_container>
                   <Investment_period className="investment-period">{data.Plazo}</Investment_period>
+
+                  <Investment_item
+                    key={i}
+                    isActive={isActive}
+                    size={`${data.key}%`}
+                    className={`investment-item_${data.ClassName}`}
+                  >
+                  </Investment_item>
+
                   <Investment_yield className="investment-yield" id="prime">
-                    <span title={data.Rendimiento}>{data.Rendimiento}</span>
+                      <span title={data.Rendimiento}>{data.Rendimiento}</span>
                   </Investment_yield>
-                </Investment_item>
+                    
+                </Results_container>
               ))}
+
+              <Investment_online_status className="investment-online-status">{onlines()}</Investment_online_status>
             </Investment_results>
 
-            <Investment_online_status className="investment-online-status">{onlines()}</Investment_online_status>
+            
 
             <Hidden_text className="hidden-text"></Hidden_text>
             {getGat("GAT REAL", "gatR")}
