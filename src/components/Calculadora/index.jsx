@@ -22,11 +22,18 @@ import {
   Gat_item,
   Help_text,
   Results_container,
-  Line,
+  SpanLine,
 } from "./index.styles";
 
 
 // import "./index.css";
+
+
+
+
+
+
+
 
 function Calculadora() {
   const [valueInversion, seValueInversion] = React.useState(100);
@@ -190,6 +197,25 @@ function Calculadora() {
     );
   };
 
+
+
+  const spanLines = () => {
+    const numLines = 8;
+    const lines = [];
+    let left = 164;
+
+    for (let i = 0; i <= numLines; i++) {
+        lines.push(<SpanLine key={i} className="line" left={`${left}px`} />);
+        left = left + 85;
+    }
+
+    return <>{lines}</>;
+};
+
+
+
+
+
   return (
 
     <MainDiv>
@@ -221,23 +247,18 @@ function Calculadora() {
           </InvestmentHeader>
          
           <ResultTable className="investment-details">
-            
+          
+          {spanLines()}
           
             <Investment_results className="investment-results" >
                           
               {dataReinversion.map((data, i) => (
                   
-                  <Results_container  style={{
-                    padding: "1px",
-                    backgroundImage: "linear-gradient(to right, rgba(255, 255, 255, 0.1) 1px, transparent 1px)",
-                    backgroundSize: "11.11% 100%", // Genera 9 líneas (100% dividido entre 9 ≈ 12%)
-                    backgroundRepeat: "repeat-x" // Repite horizontalmente para mostrar todas las líneas
-                     
-                  }}>
+                  <Results_container>
                    
                    
                     <Investment_period className="investment-period" >{data.Plazo}</Investment_period>
-                  
+
                     <Investment_item 
                       key={i}
                       isActive={isActive}

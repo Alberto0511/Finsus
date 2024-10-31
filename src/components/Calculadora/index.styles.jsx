@@ -114,10 +114,10 @@ export const Investment_online_status = styled.div`
   margin-bottom: 4em;
   color: #fff;
   font-weight: bold;
-  padding-left: 22em;
+  padding-left: 16em;
   padding-right: 1em; 
-  margin-top: 1em;
-  width: 75%; 
+  margin-top: 2em;
+  width: 80%; 
   display: flex; 
   flex-direction: row;
   justify-content: center;
@@ -204,7 +204,7 @@ export const Gat_container = styled.div`
 
 
 export const Gat_title = styled.div`
-  margin: 0px 8px 0px 56px; 
+  margin: 0px 8px 0px 12px; 
   font-weight: bold; 
   text-align: center;
   width: 10%;
@@ -215,7 +215,7 @@ export const Gat_title = styled.div`
 
 
 export const Gat_item = styled.div`
-  margin: 0px 9px 0px 5px; 
+  margin: 0px 14px 0px 5px; 
   font-weight: bold; 
   width: 7%;
   height: 35%;
@@ -235,9 +235,15 @@ export const Help_text = styled.span`
   
 `;
 
-export const Line = styled.div`
-   display: block;
-  height: 2px; /* Altura de la línea */
-  background-color: #FF5F54; /* Color de la línea */
-  margin-bottom: 5px; /* Espacio entre la línea y el contenido */
+export const SpanLine = styled.span`
+  display: block;
+  position: absolute;
+  top: 10px;
+  left: ${({ left }) => left || '50%'};
+  transform: translateX(-50%);
+  width: 1px;
+  height: 66%;
+  background-color: #fff;
+  z-index: 1;
+  
 `;
