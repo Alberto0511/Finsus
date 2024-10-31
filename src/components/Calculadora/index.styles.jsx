@@ -188,6 +188,7 @@ export const Results_container = styled.div`
 
 export const Investment_yield = styled.div`
   color: #fff;
+ 
   display: flex;           
   justify-content: center;  
   align-items: center;       
@@ -214,7 +215,7 @@ export const Gat_container = styled.div`
 
 
 export const Gat_title = styled.div`
-  margin: 0px 65px 0px 2px; 
+  margin: 0px 20px 0px 50px; 
   font-weight: bold; 
   text-align: center;
   width: 8%;
