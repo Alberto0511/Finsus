@@ -34,14 +34,30 @@ text-align: center;
 `;
 
 export const TableInversion = styled.div`
- color: #fff; 
+color: #fff; 
 background-color: rgba(255, 255, 255, 0.2);
 padding: 1em; 
-border-radius: 5px; 
-border: 2px solid #fff; 
+border-radius: 20px; 
+border: 1px solid #fff; 
 margin: 3em;  
-width: 60%;
+width: 46%;
+overflow: hidden;
+
+
 `;
+
+// position: absolute;
+//   background: 
+//     linear-gradient(
+//       to right,
+//       rgba(255, 255, 255, 0.5) 1px, /* Espaciado de la línea */
+//       transparent 1px,
+//       transparent 10% /* Espaciado total entre líneas */
+//     );
+//   background-size: 10%; /* Ajusta para tener 9 líneas */
+//   pointer-events: none; /* Evita que afecte la interacción con los elementos dentro */
+//   padding: 20px; /* Espaciado interior */
+//   margin: 10px 0; /* Espaciado superior e inferior */
 
 export const SubtitleTable = styled.p`
 color: #fff;
@@ -84,43 +100,56 @@ export const InputNumberStyled = styled(InputNumber)`
 `;
 
 export const ResultTable = styled.div`
+  padding: 2em;
+  font-size: 0.4em; 
+  line-height: 1.0; 
+   position: relative;
+  overflow: hidden;
 
-  font-size: 0.5em; 
-  line-height: 2.0; 
+
 `;
 
 
 export const Investment_online_status = styled.div`
-  margin-bottom: 1em;
+  margin-bottom: 4em;
   color: #fff;
   font-weight: bold;
-  display: flex;
-  flex-direction: center;
-  }
+  padding-left: 22em;
+  padding-right: 1em; 
+  margin-top: 1em;
+  width: 75%; 
+  display: flex; 
+  flex-direction: row;
+  justify-content: center;
+  align-items: center; 
 `;
 
 
 export const Investment_item = styled.div`
+
   display: flex;
   justify-content: space-between;
   padding: 0.5em;
   border: 1px solid #444;
-  border-radius: 6px;
+  border-radius: 9px;
   margin-bottom: 0.5em;
   margin-left: 2em;
-  margin-right: 2em;
-  max-width: 80%;
+  margin-right: 1em;
+  max-width: 77%;
   width: ${({ isActive, size }) => (isActive ? size : '0%')};
   background: ${({ isActive }) => (isActive ? 'linear-gradient(to right, #fff, #ff5f54);' : '#444')};
-  transition: background-color 0.3s;
+  transition: background-color 0.9s;
   };
+  
 `;
 
 
 export const Investment_period = styled.div`
   color: #fff;
-  width: 40px;
-  }
+  width: 70px;
+  text-align: right;
+
+
 `;
 
 
@@ -130,7 +159,9 @@ export const Investment_results = styled.div`
   flex-direction: column;
   jusitify-content: center;
   algin-items: center;
-  }
+  
+
+  
 `;
 
 
@@ -138,19 +169,24 @@ export const Results_container = styled.div`
   display: flex;
   flex-direction: row;
   width: 100%;
-  height: 30px;
-`
+  height: 35px;
+  margin-bottom: 0.5em; 
+
+
+ 
+`;
+
 
 
 export const Investment_yield = styled.div`
   color: #fff;
-  }
+  
 `;
 
 
 export const Hidden_text = styled.span`
   color: transparent;
-  }
+ 
 `;
 
 
@@ -161,23 +197,14 @@ export const Gat_container = styled.div`
   flex-direction: row;
   flex-wrap: wrap; 
   justify-content: start;
-  font-size: 12px;
+  font-size: 4px;
   font-family: 'Arial';
-  }
+  
 `;
 
 
-// export const Gat_items = styled.div`
-//   display: flex;
-//   flex-wrap: wrap; 
-//   justify-content: space-around;
-//   width: 100%;
-//   margin: 0px 10px 0px 10px; 
-// }
-// `;
-
 export const Gat_title = styled.div`
-  margin: 0px 65px 0px 70px; 
+  margin: 0px 8px 0px 56px; 
   font-weight: bold; 
   text-align: center;
   width: 10%;
@@ -188,146 +215,29 @@ export const Gat_title = styled.div`
 
 
 export const Gat_item = styled.div`
-  margin: 0px 5px 0px 5px; 
+  margin: 0px 9px 0px 5px; 
   font-weight: bold; 
   width: 7%;
-  height: 5%;
-}
+  height: 35%;
+  
+
+ 
 `;
 
 
 export const Help_text = styled.span`
-  margin: 0px;
+  margin: 9px;
   display: flex;
   flex-direction: column;
   flex-wrap: wrap; 
   text-align: center;
-  }
+  
+  
 `;
 
-
-
-
-
-// export const Body = styled.body`
-//   background-color: #23223f;
-//   color: white;
-//   font-family: Arial, sans-serif;
-// `;
-
-// export const InvestmentSimulator = styled.div`
-//   max-width: 1000px;
-//   margin: 2em auto;
-//   padding: 1em;
-//   border-radius: 10px;
-//   background-color: rgba(255, 255, 255, 0.2);
-//   backdrop-filter: blur(1px);
-//   border: 2px solid rgba(255, 255, 255, 0.8);
-// `;
-
-// export const Header = styled.h1`
-//   color: #fff;
-//   text-align: center;
-// `;
-
-// export const InvestmentHeader = styled.div`
-//   margin-bottom: 1em;
-// `;
-
-// export const InvestmentDescription = styled.p`
-//   color: #fff;
-//   margin-bottom: 0.5em;
-//   text-align: center;
-// `;
-
-// export const InputNumber = styled.input`
-//   border-radius: 6px;
-//   background: transparent;
-//   color: #fff;
-//   margin-bottom: 1em;
-//   padding: 0.5em;
-//   border: 1px solid #fff;
-//   width: 100%;
-// `;
-
-// export const MinimumAmount = styled.span`
-//   display: block;
-//   color: #fff;
-//   font-size: 0.9em;
-//   font-weight: bold;
-//   text-align: center;
-// `;
-
-// export const MarginBottom = styled.div`
-//   margin-bottom: 1em;
-// `;
-
-// export const InvestmentDetails = styled.div`
-//   margin-top: 1em;
-// `;
-
-// export const InvestmentOnlineStatus = styled.div`
-//   margin-bottom: 1em;
-//   color: #fff;
-//   font-weight: bold;
-// `;
-
-// export const InvestmentResults = styled.div`
-//   display: flex;
-//   flex-direction: column;
-// `;
-
-// export const InvestmentItem = styled.div`
-//   display: flex;
-//   justify-content: space-between;
-//   padding: 0.5em;
-//   border: 1px solid #444;
-//   border-radius: 6px;
-//   margin-bottom: 0.5em;
-//   background-color: #444;
-//   transition: background-color 0.3s;
-
-//   &.active {
-//     background-color: #ff5f54;
-//   }
-// `;
-
-// export const InvestmentPeriod = styled.div`
-//   color: #fff;
-// `;
-
-// export const InvestmentYield = styled.div`
-//   color: #fff;
-// `;
-
-// export const HiddenText = styled.span`
-//   color: transparent;
-// `;
-
-// export const GatContainer = styled.div`
-//   margin-top: 2em;
-//   margin-left: -3em;
-//   width: 120%; 
-//   display: flex; 
-//   align-items: center; 
-// `;
-
-// export const Title = styled.div`
-//   margin-bottom: 0; 
-//   font-weight: bold; 
-//   text-align: left; 
-//   flex: 1; 
-// `;
-
-// export const GatItems = styled.div`
-//   display: flex;
-//   flex-wrap: wrap; 
-//   justify-content: flex-start; 
-//   margin-left: 0.5em; 
-// `;
-
-// export const GatItem = styled.div`
-//   margin: 0.3em;
-//   flex: 0 1 auto; 
-//   font-weight: bold; 
-// `;
+export const Line = styled.div`
+   display: block;
+  height: 2px; /* Altura de la línea */
+  background-color: #FF5F54; /* Color de la línea */
+  margin-bottom: 5px; /* Espacio entre la línea y el contenido */
+`;

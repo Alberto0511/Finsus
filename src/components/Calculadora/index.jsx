@@ -22,6 +22,7 @@ import {
   Gat_item,
   Help_text,
   Results_container,
+  Line,
 } from "./index.styles";
 
 
@@ -214,36 +215,51 @@ function Calculadora() {
             />
 
           
-
+         
 
             <MinimumAmount className="minimum-amount">El monto mínimo es de $100.00</MinimumAmount>
           </InvestmentHeader>
+         
           <ResultTable className="investment-details">
             
-            
-            <Investment_results className="investment-results">
+          
+            <Investment_results className="investment-results" >
+                          
               {dataReinversion.map((data, i) => (
-                <Results_container>
-                  <Investment_period className="investment-period">{data.Plazo}</Investment_period>
-
-                  <Investment_item
-                    key={i}
-                    isActive={isActive}
-                    size={`${data.key}%`}
-                    className={`investment-item_${data.ClassName}`}
-                  >
-                  </Investment_item>
-
-                  <Investment_yield className="investment-yield" id="prime">
-                      <span title={data.Rendimiento}>{data.Rendimiento}</span>
-                  </Investment_yield>
+                  
+                  <Results_container  style={{
+                    padding: "1px",
+                    backgroundImage: "linear-gradient(to right, rgba(255, 255, 255, 0.1) 1px, transparent 1px)",
+                    backgroundSize: "11.11% 100%", // Genera 9 líneas (100% dividido entre 9 ≈ 12%)
+                    backgroundRepeat: "repeat-x" // Repite horizontalmente para mostrar todas las líneas
+                     
+                  }}>
+                   
+                   
+                    <Investment_period className="investment-period" >{data.Plazo}</Investment_period>
+                  
+                    <Investment_item 
+                      key={i}
+                      isActive={isActive}
+                      size={`${data.key}%`}
+                      className={`investment-item_${data.ClassName}`}
+                    >
+                    </Investment_item>
+                  
+                    <Investment_yield className="investment-yield" id="prime">
+                        <span title={data.Rendimiento}>{data.Rendimiento}</span>
+                    </Investment_yield>
                     
-                </Results_container>
+                  
+                    
+                  </Results_container>
+                 
               ))}
+              
 
               <Investment_online_status className="investment-online-status">{onlines()}</Investment_online_status>
             </Investment_results>
-
+            
             
 
             <Hidden_text className="hidden-text"></Hidden_text>
