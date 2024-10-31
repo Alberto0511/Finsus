@@ -114,24 +114,9 @@ export const ResultTable = styled.div`
 `;
 
 
-export const Investment_online_status = styled.div`
-  margin-bottom: 2em;
-  color: #fff;
-  font-weight: bold;
-  padding-left: 12em;
-  padding-right: 1em; 
-  margin-top: 1em;
-  width: 79%; 
-  display: flex; 
-  flex-direction: row;
-  justify-content: center;
-  align-items: center; 
-  font-size: 15px;
-`;
 
 
 export const Investment_item = styled.div`
-
   display: flex;
   justify-content: space-between;
   padding: 1.1em;
@@ -141,13 +126,10 @@ export const Investment_item = styled.div`
   margin-left: 0em;
   margin-right: 0.5em;
   max-width: 76%;
-  width: ${({ isActive, size }) => (isActive ? size : '0%')};
-  background: ${({ isActive }) => (isActive ? 'linear-gradient(to right, #fff, #ff5f54);' : '#444')};
-  transition: background-color 0.9s;
-  };
-  
+  width: ${({ isActive, size }) => (isActive ? size : '0%')}; // Mantiene un ancho del 100% si no está activo
+  background: ${({ isActive }) => (isActive ? 'linear-gradient(to right, #fff, #ff5f54)' : 'linear-gradient(to right, #fff, #ff5f54)')}; 
+  transition: background 1.9s, width 1.9s; 
 `;
-
 
 export const Investment_period = styled.div`
   color: #fff;
@@ -200,25 +182,41 @@ export const Hidden_text = styled.span`
  
 `;
 
+export const Investment_online_status = styled.div`
+  margin-bottom: 2em;
+  color: #fff;
+  font-weight: bold;
+  padding-left: 10em;
+  padding-right: 1em; 
+  margin-top: 1em;
+  width: 79%; 
+  display: flex; 
+  flex-direction: row;
+  justify-content: center;
+  align-items: center; 
+  font-size: 17px;
+`;
+
+
 
 export const Gat_container = styled.div`
-  margin-top: 2em;
+  margin-top: 1em;
   width: 100%; 
   display: flex; 
   flex-direction: row;
   flex-wrap: wrap; 
   justify-content: start;
-  font-size: 16px;
+  font-size: 17px;
   color: #fff;
   
 `;
 
 
 export const Gat_title = styled.div`
-  margin: 0px 20px 0px 50px; 
+  margin: 0px 29px 0px 50px; 
   font-weight: bold; 
   text-align: center;
-  width: 8%;
+  width: 7%;
   display: flex; 
   flex-wrap: wrap;
   
@@ -238,7 +236,7 @@ export const Gat_item = styled.div`
 
 
 export const Help_text = styled.span`
-  margin: 9px;
+  margin: 7px;
   display: flex;
   flex-direction: column;
   flex-wrap: wrap; 
@@ -254,7 +252,7 @@ export const SpanLine = styled.span`
   left: ${({ left }) => left || '50%'};
   transform: translateX(-50%);
   width: 1px;
-  height: 61%;
+  height: 65%;
   background-color: #fff;
   z-index: -1;
   
