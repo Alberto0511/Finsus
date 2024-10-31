@@ -19,7 +19,7 @@ export const MainDiv = styled.div`
   position: absolute; 
   top: 0; 
   left: 0; 
-  
+  font-family: 'Arial';
 `;
 
 export const InvestmentHeader = styled.div`
@@ -34,15 +34,15 @@ text-align: center;
 `;
 
 export const TableInversion = styled.div`
-color: #fff; 
-background-color: rgba(255, 255, 255, 0.2);
+color: #D3D3D3; 
+background-color: rgba(255, 255, 255, 0.1);
 padding: 1em; 
 border-radius: 20px; 
 border: 1px solid #fff; 
 margin: 3em;  
-width: 46%;
+width: 60%;
 overflow: hidden;
-
+font-size: 17px;
 
 `;
 
@@ -61,16 +61,19 @@ overflow: hidden;
 
 export const SubtitleTable = styled.p`
 color: #fff;
-margin-bottom: 0.5em; 
+margin-bottom: 1.2em; 
 text-align: center; 
+font-size: 16px;
+ 
 `;
 
 export const MinimumAmount = styled.span`
  display: block;
   color: #fff; 
-  font-size: 0.9em; 
+  font-size: 1.1em; 
   font-weight: bold; 
   text-align: center; 
+ 
 `;
 
 export const InputNumberStyled = styled(InputNumber)`
@@ -79,9 +82,9 @@ export const InputNumberStyled = styled(InputNumber)`
   background: transparent !important; 
   color: #ffffff !important; 
   margin-bottom: 1em;
-  padding: 0.5em;
+  padding: 0.4em;
   border: 1px solid #ffffff !important; 
-
+  font-size: 1.3em; 
 
   &:hover,
   &:focus,
@@ -100,28 +103,30 @@ export const InputNumberStyled = styled(InputNumber)`
 `;
 
 export const ResultTable = styled.div`
-  padding: 2em;
-  font-size: 0.4em; 
+  padding: 0em; 
   line-height: 1.0; 
-   position: relative;
+  position: relative;
   overflow: hidden;
-
-
+  font-size: 16px;
+  position: relative;
+  z-index: 1;
+  
 `;
 
 
 export const Investment_online_status = styled.div`
-  margin-bottom: 4em;
+  margin-bottom: 2em;
   color: #fff;
   font-weight: bold;
-  padding-left: 16em;
+  padding-left: 12em;
   padding-right: 1em; 
-  margin-top: 2em;
-  width: 80%; 
+  margin-top: 1em;
+  width: 79%; 
   display: flex; 
   flex-direction: row;
   justify-content: center;
   align-items: center; 
+  font-size: 15px;
 `;
 
 
@@ -129,13 +134,13 @@ export const Investment_item = styled.div`
 
   display: flex;
   justify-content: space-between;
-  padding: 0.5em;
+  padding: 1.1em;
   border: 1px solid #444;
   border-radius: 9px;
   margin-bottom: 0.5em;
-  margin-left: 2em;
-  margin-right: 1em;
-  max-width: 77%;
+  margin-left: 0em;
+  margin-right: 0.5em;
+  max-width: 76%;
   width: ${({ isActive, size }) => (isActive ? size : '0%')};
   background: ${({ isActive }) => (isActive ? 'linear-gradient(to right, #fff, #ff5f54);' : '#444')};
   transition: background-color 0.9s;
@@ -147,10 +152,13 @@ export const Investment_item = styled.div`
 export const Investment_period = styled.div`
   color: #fff;
   width: 70px;
-  text-align: right;
-
-
+  margin-right: 15px;
+  display: flex;
+  align-items: center;    
+  text-align: right;      
+  justify-content: flex-end;
 `;
+
 
 
 export const Investment_results = styled.div`
@@ -170,7 +178,7 @@ export const Results_container = styled.div`
   flex-direction: row;
   width: 100%;
   height: 35px;
-  margin-bottom: 0.5em; 
+  margin-bottom: 0.6em; 
 
 
  
@@ -180,7 +188,9 @@ export const Results_container = styled.div`
 
 export const Investment_yield = styled.div`
   color: #fff;
-  
+  display: flex;           
+  justify-content: center;  
+  align-items: center;       
 `;
 
 
@@ -197,25 +207,26 @@ export const Gat_container = styled.div`
   flex-direction: row;
   flex-wrap: wrap; 
   justify-content: start;
-  font-size: 4px;
-  font-family: 'Arial';
+  font-size: 16px;
+  color: #fff;
   
 `;
 
 
 export const Gat_title = styled.div`
-  margin: 0px 8px 0px 12px; 
+  margin: 0px 65px 0px 2px; 
   font-weight: bold; 
   text-align: center;
-  width: 10%;
+  width: 8%;
   display: flex; 
   flex-wrap: wrap;
+  
 }
 `;
 
 
 export const Gat_item = styled.div`
-  margin: 0px 14px 0px 5px; 
+  margin: 0px 15px 0px 5px; 
   font-weight: bold; 
   width: 7%;
   height: 35%;
@@ -242,8 +253,8 @@ export const SpanLine = styled.span`
   left: ${({ left }) => left || '50%'};
   transform: translateX(-50%);
   width: 1px;
-  height: 66%;
+  height: 61%;
   background-color: #fff;
-  z-index: 1;
+  z-index: -1;
   
 `;

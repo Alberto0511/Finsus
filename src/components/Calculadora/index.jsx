@@ -202,11 +202,11 @@ function Calculadora() {
   const spanLines = () => {
     const numLines = 8;
     const lines = [];
-    let left = 164;
+    let left = 220;
 
     for (let i = 0; i <= numLines; i++) {
         lines.push(<SpanLine key={i} className="line" left={`${left}px`} />);
-        left = left + 85;
+        left = left + 97;
     }
 
     return <>{lines}</>;
