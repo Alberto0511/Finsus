@@ -34,16 +34,23 @@ text-align: center;
 `;
 
 export const TableInversion = styled.div`
-color: #D3D3D3; 
-background-color: rgba(255, 255, 255, 0.1);
-padding: 1em; 
-border-radius: 20px; 
-border: 1px solid #fff; 
-margin: 3em;  
-width: 60%;
-overflow: hidden;
-font-size: 17px;
+  color: #D3D3D3; 
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 1em; 
+  border-radius: 20px; 
+  border: 1px solid #fff; 
+  margin: 3em auto; 
+  width: 1160px; 
+  max-width: 1200px; 
+  overflow: hidden;
+  font-size: 17px;
+  
 
+  @media (max-width: 1255px) {
+    width: 1000px; 
+    padding: 0.4em; 
+    font-size: 15px; 
+  }
 `;
 
 // position: absolute;
@@ -111,6 +118,8 @@ export const ResultTable = styled.div`
   position: relative;
   z-index: 1;
   
+
+
 `;
 
 
@@ -119,17 +128,25 @@ export const ResultTable = styled.div`
 export const Investment_item = styled.div`
   display: flex;
   justify-content: space-between;
-  padding: 1.1em;
+  padding: 1.0em;
   border: 1px solid #444;
   border-radius: 9px;
   margin-bottom: 0.5em;
   margin-left: 0em;
   margin-right: 0.5em;
-  max-width: 76%;
-  width: ${({ isActive, size }) => (isActive ? size : '0%')}; // Mantiene un ancho del 100% si no está activo
+  max-width: 100%;
+  width: ${({ isActive, size }) => (isActive ? size : '0%')}; 
+
   background: ${({ isActive }) => (isActive ? 'linear-gradient(to right, #fff, #ff5f54)' : 'linear-gradient(to right, #fff, #ff5f54)')}; 
-  transition: background 1.9s, width 1.9s; 
+  transition: background 1.9s, width 1.9s;
+
+  /* Ajuste responsivo */
+  @media (max-width: 1255px) {
+    padding: 0.9em;
+    width: ${({ isActive, size }) => (isActive ? `calc(${size} * 1 - 9px)` : '0%')};
+  }
 `;
+
 
 export const Investment_period = styled.div`
   color: #fff;
@@ -139,6 +156,8 @@ export const Investment_period = styled.div`
   align-items: center;    
   text-align: right;      
   justify-content: flex-end;
+
+
 `;
 
 
@@ -150,7 +169,7 @@ export const Investment_results = styled.div`
   jusitify-content: center;
   algin-items: center;
   
-
+ 
   
 `;
 

@@ -48,7 +48,7 @@ const dataReinversion = [
       gatR: "9.83%",
       gatN: "14.09%",
       ClassName: `row three-sixty-six`,
-      Size: "42.4",
+      Size: "42.6",
     },
     {
       Tasa: "14.55%",
@@ -58,7 +58,7 @@ const dataReinversion = [
       gatR: "10.27%",
       gatN: "14.55%",
       ClassName: `row three-sixty-seven`,
-      Size: "51",
+      Size: "51.1",
     },
     {
       Tasa: "15.01%",
@@ -68,7 +68,7 @@ const dataReinversion = [
       gatR: "10.71%",
       gatN: "15.01%",
       ClassName: `row three-sixty-eight`,
-      Size: "59.3",
+      Size: "59.6",
     },
     {
       Tasa: "13.25%",
@@ -78,7 +78,7 @@ const dataReinversion = [
       gatR: "9.02%",
       gatN: "13.25%",
       ClassName: `row three-sixty-nine`,
-      Size: "67.6",
+      Size: "68.1",
     },
     {
       Tasa: "12.75%",
@@ -88,7 +88,7 @@ const dataReinversion = [
       gatR: "8.54%",
       gatN: "12.75%",
       ClassName: "row three-sixty-ten",
-      Size: "77.1",
+      Size: "76.6",
     },
   ];
   

@@ -197,23 +197,22 @@ function Calculadora() {
     );
   };
 
-
-
+  
   const spanLines = () => {
-    const numLines = 8;
+    const numLines = 9; // Número total de líneas
     const lines = [];
-    let left = 220;
-
-    for (let i = 0; i <= numLines; i++) {
-        lines.push(<SpanLine key={i} className="line" left={`${left}px`} />);
-        left = left + 97;
+    const containerWidth = 85; // Ancho del contenedor en %
+    const initialOffset = 19; // Desplazamiento inicial en %
+  
+    for (let i = 0; i < numLines; i++) {
+      // Calcular el espacio entre líneas en % basado en el número de líneas
+      const left = (initialOffset + (i * (containerWidth / (numLines + 1)))) + '%'; // Distribuir uniformemente con desplazamiento inicial
+      lines.push(<SpanLine key={i} left={left} />);
     }
-
+  
     return <>{lines}</>;
-};
-
-
-
+  };
+  
 
 
   return (
@@ -227,7 +226,6 @@ function Calculadora() {
               Escribe una cantidad y descubre su rendimiento según el plazo.
             </SubtitleTable>
 
-
             <InputNumberStyled
               controls={false}
               min={100}
@@ -239,10 +237,6 @@ function Calculadora() {
               parser={(value) => value.replace(/\$\s?|(,*)/g, "")}
               onChange={onChange}
             />
-
-          
-         
-
             <MinimumAmount className="minimum-amount">El monto mínimo es de $100.00</MinimumAmount>
           </InvestmentHeader>
          
@@ -271,13 +265,10 @@ function Calculadora() {
                         <span title={data.Rendimiento}>{data.Rendimiento}</span>
                     </Investment_yield>
                     
-                  
-                    
                   </Results_container>
                  
               ))}
               
-
               <Investment_online_status className="investment-online-status">{onlines()}</Investment_online_status>
             </Investment_results>
             
