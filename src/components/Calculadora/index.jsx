@@ -262,7 +262,7 @@ function Calculadora() {
                     <Investment_item 
                       key={i}
                       isActive={isActive}
-                      size={`${data.key}%`}
+                      size={`${data.Size}%`}
                       className={`investment-item_${data.ClassName}`}
                     >
                     </Investment_item>

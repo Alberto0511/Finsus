@@ -252,7 +252,7 @@ export const SpanLine = styled.span`
   left: ${({ left }) => left || '50%'};
   transform: translateX(-50%);
   width: 1px;
-  height: 65%;
+  height: 63%;
   background-color: #fff;
   z-index: -1;
   
