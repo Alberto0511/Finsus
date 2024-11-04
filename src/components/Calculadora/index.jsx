@@ -23,6 +23,7 @@ import {
   Help_text,
   Results_container,
   SpanLine,
+  Resp_Titles,
 } from "./index.styles";
 
 
@@ -245,6 +246,11 @@ function Calculadora() {
           {spanLines()}
           
             <Investment_results className="investment-results" >
+              <Resp_Titles>
+                <div><span>Tasa</span></div>
+                <div><span>Plazo</span></div>
+                <div><span>Rendimiento</span></div>
+              </Resp_Titles>
                           
               {dataReinversion.map((data, i) => (
                   
@@ -266,7 +272,7 @@ function Calculadora() {
                     </Investment_yield>
                     
                   </Results_container>
-                 
+                
               ))}
               
               <Investment_online_status className="investment-online-status">{onlines()}</Investment_online_status>

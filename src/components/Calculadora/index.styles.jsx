@@ -20,17 +20,28 @@ export const MainDiv = styled.div`
   top: 0; 
   left: 0; 
   font-family: 'Arial';
+
+  
 `;
 
 export const InvestmentHeader = styled.div`
     margin-bottom: 1em;
-    
+
+    @media (max-width: 1200px) {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 5em;
+    }
 `;
 
 export const HeaderTable = styled.h3`
 color: #fff;
 text-align: center; 
-    
+@media (max-width: 1200px) {
+    display: none;
+    }
 `;
 
 export const TableInversion = styled.div`
@@ -51,6 +62,12 @@ export const TableInversion = styled.div`
     padding: 0.4em; 
     font-size: 15px; 
   }
+
+  @media (max-width: 1200px) {
+    background: transparent;
+    width: 400px; 
+    border: none;
+    }
 `;
 
 // position: absolute;
@@ -100,12 +117,16 @@ export const InputNumberStyled = styled(InputNumber)`
     border-color: #fff; 
     box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.5); 
     outline: none; 
-  }
+  };
 
   & .ant-input-number-input {
     color: #ffffff !important;
     text-align: center; 
-  }
+  };
+
+  @media (max-width: 1200px) {
+    width: 95%;
+    }
 
 `;
 
@@ -117,7 +138,9 @@ export const ResultTable = styled.div`
   font-size: 16px;
   position: relative;
   z-index: 1;
-  
+  @media (max-width: 1200px) {
+    display: flex;
+  }
 
 
 `;
@@ -144,7 +167,10 @@ export const Investment_item = styled.div`
   @media (max-width: 1255px) {
     padding: 0.9em;
     width: ${({ isActive, size }) => (isActive ? `calc(${size} * 1 - 9px)` : '0%')};
-  }
+  };
+  @media (max-width: 1200px) {
+    display: none;
+    }
 `;
 
 
@@ -156,8 +182,12 @@ export const Investment_period = styled.div`
   align-items: center;    
   text-align: right;      
   justify-content: flex-end;
-
-
+  @media (max-width: 1200px) {
+    width: 120px;
+    text-align: center; 
+    justify-content: center;
+    margin-right: 3em;
+  }
 `;
 
 
@@ -168,7 +198,13 @@ export const Investment_results = styled.div`
   flex-direction: column;
   jusitify-content: center;
   algin-items: center;
-  
+
+
+
+
+  @media (max-width: 1200px) {
+    height: 400px;
+  }
  
   
 `;
@@ -180,8 +216,13 @@ export const Results_container = styled.div`
   width: 100%;
   height: 35px;
   margin-bottom: 0.6em; 
-
-
+  @media (max-width: 1200px) {
+    width: 50%;
+    justify-content: center;
+    margin-right: 3em;
+    margin-bottom: 0; 
+    margin-left: 9em;
+  }
  
 `;
 
@@ -192,7 +233,12 @@ export const Investment_yield = styled.div`
  
   display: flex;           
   justify-content: center;  
-  align-items: center;       
+  align-items: center;     
+  
+  @media (max-width: 1200px) {
+    width: 100px;
+    text-align; center;
+  }
 `;
 
 
@@ -214,6 +260,22 @@ export const Investment_online_status = styled.div`
   justify-content: center;
   align-items: center; 
   font-size: 17px;
+
+  @media (max-width: 1200px) {
+    flex-direction: column;
+    margin: 0;
+    pading: 0;
+    font-weight: normal;
+    width: 50px; 
+    height: 200px;
+    position: absolute;
+    top: 92px;
+    left: -190px;
+
+    span{
+      margin: 9px;
+    }
+    }
 `;
 
 
@@ -227,7 +289,10 @@ export const Gat_container = styled.div`
   justify-content: start;
   font-size: 17px;
   color: #fff;
-  
+
+  @media (max-width: 1200px) {
+    display: none;
+    }
 `;
 
 
@@ -248,9 +313,6 @@ export const Gat_item = styled.div`
   font-weight: bold; 
   width: 7%;
   height: 35%;
-  
-
- 
 `;
 
 
@@ -274,5 +336,31 @@ export const SpanLine = styled.span`
   height: 63%;
   background-color: #fff;
   z-index: -1;
-  
+  @media (max-width: 1200px) {
+    display: none;
+    }
+`;
+
+
+export const Resp_Titles = styled.div`
+  display: none;
+  span{
+      display: none;
+  };
+  @media (max-width: 1200px) {
+    width: 380px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 1em;
+    span{
+      display: block;
+    };
+    div{
+      width: 100px;
+      text-align: center;
+    }
+    
+
+    }
 `;
