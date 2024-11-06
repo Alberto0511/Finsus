@@ -200,20 +200,28 @@ function Calculadora() {
 
   
   const spanLines = () => {
-    const numLines = 9; // Número total de líneas
-    const lines = [];
-    const containerWidth = 85; // Ancho del contenedor en %
-    const initialOffset = 19; // Desplazamiento inicial en %
+    // Configuración original
+    const numLines = 10; // Número total de líneas en pantallas grandes
+    const containerWidth = 90; // Ancho del contenedor en % en pantallas grandes
+    const initialOffset = 20; // Desplazamiento inicial en % en pantallas grandes
   
-    for (let i = 0; i < numLines; i++) {
-      // Calcular el espacio entre líneas en % basado en el número de líneas
-      const left = (initialOffset + (i * (containerWidth / (numLines + 1)))) + '%'; // Distribuir uniformemente con desplazamiento inicial
+    // Configuración responsiva
+    const isSmallScreen = window.innerWidth <= 768;
+    const isMediumScreen = window.innerWidth > 768 && window.innerWidth <= 1255;
+  
+    const responsiveNumLines = isSmallScreen ? 10 : numLines; // Mantener las 10 líneas en pantallas pequeñas
+    const responsiveContainerWidth = isMediumScreen ? 90 : containerWidth; // Cambiar a 89% en pantallas medianas
+    const responsiveInitialOffset = isSmallScreen ? 20 : isMediumScreen ? 19 : initialOffset; // Reducir el desplazamiento inicial en pantallas pequeñas y medianas
+    
+    const lines = [];
+  
+    for (let i = 0; i < responsiveNumLines; i++) {
+      const left = (responsiveInitialOffset + (i * (responsiveContainerWidth / (responsiveNumLines + 1)))) + '%';
       lines.push(<SpanLine key={i} left={left} />);
     }
   
     return <>{lines}</>;
   };
-  
 
 
   return (
