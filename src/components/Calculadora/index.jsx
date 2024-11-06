@@ -169,7 +169,7 @@ function Calculadora() {
       const e = dataReinversion[i];
       lines.push(
         <span style={{ width: "21.4%" }}>
-          <span className="line"></span>
+          {/* <span className="line"></span> */}
           <span className="percent ">{e.Tasa}</span>
         </span>
       );
@@ -263,7 +263,6 @@ function Calculadora() {
               {dataReinversion.map((data, i) => (
                   
                   <Results_container className="results-container">
-                   
                    
                     <Investment_period className="investment-period" >{data.Plazo}</Investment_period>
 

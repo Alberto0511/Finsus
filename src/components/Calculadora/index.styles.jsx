@@ -24,25 +24,22 @@ export const MainDiv = styled.div`
   
 
 
-@media (max-width: 1255px) {
-  background: #23223f; 
-  height: 110vh; 
-  
-    }
-  
-
-  @media (max-width: 950px) and (min-width: 800){
+  @media (max-width: 1255px) {
+    background: #23223f; 
+    height: 110vh; 
+    
+  };
+  @media (max-width: 950px){
     position: none; 
     max-width: 1255px;
     height: 100%; 
-    
   };
   
 `;
 
 export const InvestmentHeader = styled.div`
     margin-bottom: 1em;
-    @media (max-width: 1200px) {
+    @media (max-width: 950px){
       display: flex;
       flex-direction: column;
       justify-content: start;
@@ -58,9 +55,9 @@ color: #fff;
 text-align: center; 
 margin-top: 3em;
 
-@media (max-width: 1200px) {
+@media (max-width: 950px){
     display: none;
-    }
+  }
 `;
 
 export const TableInversion = styled.div`
@@ -106,18 +103,16 @@ export const TableInversion = styled.div`
 //   margin: 10px 0; /* Espaciado superior e inferior */
 
 export const SubtitleTable = styled.p`
-color: #fff;
-margin-bottom: 1.6em; 
-text-align: center; 
-font-size: 16px;
-@media (max-width: 1255px) {
-  font-size: 15px;
-  text-align: start; 
-  margin-bottom: 1.4em;
+  color: #fff;
+  margin-bottom: 1.6em; 
   text-align: center; 
   font-size: 16px;
-};
- 
+  @media (max-width: 950px) {
+    font-size: 18px;
+    text-align: start; 
+    margin-bottom: 1.4em;
+    text-align: start;
+  };
 `;
 
 export const MinimumAmount = styled.span`
@@ -161,10 +156,10 @@ export const InputNumberStyled = styled(InputNumber)`
     text-align: center; 
   };
 
-  @media (max-width: 1255px){
-    width: 93%;
-    margin-left: 30px; 
-     padding: 0.6em;
+  @media (max-width: 950px){
+    width: 90%;
+    margin-left: 0px; 
+    padding: 0.6em;
   };
 `;
 
@@ -176,7 +171,7 @@ export const ResultTable = styled.div`
   font-size: 16px;
   position: relative;
   z-index: 1;
-  @media (max-width: 1200px) {
+  @media (max-width: 950px){
     display: flex;
     width: 350px;
   }
@@ -208,7 +203,7 @@ export const Investment_item = styled.div`
     padding: 1em;
    width: ${({ isActive, size }) => (isActive ? `calc(${size} - 5%)` : '0%')};
   };
-  @media (max-width: 950px) {
+  @media (max-width: 950px){
     display: none;
     }
 `;
@@ -223,11 +218,11 @@ export const Investment_period = styled.div`
   margin-left: 0px;  
   justify-content: flex-end;
 
-  @media (max-width: 1255px) {
-  width: 90px;
-  justify-content: flex-end;
-  text-align: right; 
-    
+  @media (max-width: 950px){
+    width: 90px;
+    display: flex;
+    justify-content: start;
+    text-align: right; 
   }
 `;
 
@@ -242,7 +237,7 @@ export const Investment_results = styled.div`
 
 
   @media (max-width: 950px) {
-    height: 400px;
+    height: 500px;
     font-size: 12px;
     width: 350px;
   }
@@ -257,24 +252,14 @@ export const Results_container = styled.div`
   margin-bottom: 0.2em;
 
   @media (max-width: 950px) {
-    width: 300px;
+    width: 107%;
+    height: 30.2px;
     justify-content: center;
     margin-right: 0em;
     margin-bottom: 0; 
     margin-top: 1em; 
-    margin-left: 9.5em;
-    
-  }
-
-
-  @media (max-width: 1255px) {
-  
-  width: 107%;
-  height: 36px;
-  margin-bottom: 0.2em;
-    
-  }
- 
+    margin-left: 4em;
+  };
 `;
 
 
@@ -291,10 +276,11 @@ export const Investment_yield = styled.div`
   justify-content: center;  
   align-items: center;     
   
-  @media (max-width: 1255px) {
+  @media (max-width: 950px){
     width: 100px;
-    text-align; center;
+    display: flex;
     justify-content: start; 
+    margin-left: 2em;
   }
 `;
 
@@ -318,24 +304,24 @@ export const Investment_online_status = styled.div`
   align-items: center; 
   font-size: 17px;
 
-  @media (max-width: 950px) {
+  @media (max-width: 950px){
+    display: flex;
     flex-direction: column;
-    margin: 0;
-    pading: 0;
+    justify-content: start;
     font-weight: normal;
-    width: 50px; 
-    height: 200px;
-    position: absolute;
-    top: 130px;
-    left: -107px;
     font-size: 12px;
+    margin: 0;
+    width: 50%;
+    heigth: 300px;
+    position: absolute;
+    left: -214px;
+    top: 35px;
 
     span{
-      margin-bottom: 2.6em;
-    }
-  }
-
-   @media (max-width: 1255px) {
+      margin-bottom: 30.25px;
+    };
+  };
+  @media (max-width: 1255px) {
     width: 81%; 
     padding-left: 9.5em;
   }
@@ -353,9 +339,9 @@ export const Gat_container = styled.div`
   font-size: 17px;
   color: #fff;
 
-  @media (max-width: 955px) {
+  @media (max-width: 950px){
     display: none;
-    }
+  }
     
 `;
 
@@ -418,15 +404,12 @@ export const SpanLine = styled.span`
   background-color: #808080;
   z-index: -1;
 
-@media (max-width: 950px) {
+  @media (max-width: 950px) {
     display: none;
-    }
-
-
-@media (max-width: 1255px) {
-  height: 65%;
- 
-    }
+  };
+  @media (max-width: 1255px) {
+    height: 65%;
+  }
 `;
 
 
@@ -437,7 +420,7 @@ export const Resp_Titles = styled.div`
       display: none;
       
   };
-  @media (max-width: 1200px) {
+  @media (max-width: 950px) {
     width: 350px;
     display: flex;
     flex-direction: row;
@@ -447,7 +430,6 @@ export const Resp_Titles = styled.div`
     font-weight: bold; 
     span{
       display: block;
-      
     };
     div{
       width: 90%;
