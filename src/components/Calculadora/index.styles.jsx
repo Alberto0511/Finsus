@@ -4,8 +4,8 @@ import { InputNumber, Select } from "antd";
 
 
 export const MainDiv = styled.div`
- background: #23223f; 
-  min-height: 100vh; 
+  background: #23223f; 
+  height: 100vh; 
   width: 100vw; 
   margin: 0; 
   padding: 0; 
@@ -21,6 +21,11 @@ export const MainDiv = styled.div`
   left: 0; 
   font-family: 'Arial';
 
+  @media (max-width: 1200px) and (min-width: 800){
+    position: none; 
+    max-width: 1200px;
+    height: 100%; 
+  };
   
 `;
 
@@ -30,9 +35,11 @@ export const InvestmentHeader = styled.div`
     @media (max-width: 1200px) {
       display: flex;
       flex-direction: column;
-      justify-content: center;
-      align-items: center;
+      justify-content: start;
       margin-bottom: 5em;
+      text-align: start; 
+      font-size: 13px;
+      width: 350px;
     }
 `;
 
@@ -65,7 +72,7 @@ export const TableInversion = styled.div`
 
   @media (max-width: 1200px) {
     background: transparent;
-    width: 400px; 
+    width: 350px; 
     border: none;
     }
 `;
@@ -88,6 +95,10 @@ color: #fff;
 margin-bottom: 1.2em; 
 text-align: center; 
 font-size: 16px;
+@media (max-width: 1200px) {
+  font-size: 15px;
+  text-align: start; 
+};
  
 `;
 
@@ -97,6 +108,11 @@ export const MinimumAmount = styled.span`
   font-size: 1.1em; 
   font-weight: bold; 
   text-align: center; 
+
+  @media (max-width: 1200px) {
+    text-align: start; 
+    font-size: 11px; 
+  }
  
 `;
 
@@ -124,10 +140,9 @@ export const InputNumberStyled = styled(InputNumber)`
     text-align: center; 
   };
 
-  @media (max-width: 1200px) {
+  @media (max-width: 1200px){
     width: 95%;
-    }
-
+  };
 `;
 
 export const ResultTable = styled.div`
@@ -140,6 +155,7 @@ export const ResultTable = styled.div`
   z-index: 1;
   @media (max-width: 1200px) {
     display: flex;
+    width: 350px;
   }
 
 
@@ -180,13 +196,15 @@ export const Investment_period = styled.div`
   margin-right: 15px;
   display: flex;
   align-items: center;    
-  text-align: right;      
+      
   justify-content: flex-end;
+
   @media (max-width: 1200px) {
     width: 120px;
     text-align: center; 
-    justify-content: center;
-    margin-right: 3em;
+    justify-content: start;
+    text-align: right; 
+    margin-right: 0em;
   }
 `;
 
@@ -199,14 +217,11 @@ export const Investment_results = styled.div`
   jusitify-content: center;
   algin-items: center;
 
-
-
-
   @media (max-width: 1200px) {
     height: 400px;
+    font-size: 12px;
+    width: 350px;
   }
- 
-  
 `;
 
 
@@ -217,11 +232,13 @@ export const Results_container = styled.div`
   height: 35px;
   margin-bottom: 0.6em; 
   @media (max-width: 1200px) {
-    width: 50%;
+    width: 300px;
     justify-content: center;
-    margin-right: 3em;
+    margin-right: 0em;
     margin-bottom: 0; 
-    margin-left: 9em;
+    margin-top: 1em; 
+    margin-left: 9.5em;
+    
   }
  
 `;
@@ -238,6 +255,7 @@ export const Investment_yield = styled.div`
   @media (max-width: 1200px) {
     width: 100px;
     text-align; center;
+    justify-content: start; 
   }
 `;
 
@@ -269,19 +287,20 @@ export const Investment_online_status = styled.div`
     width: 50px; 
     height: 200px;
     position: absolute;
-    top: 92px;
-    left: -190px;
+    top: 130px;
+    left: -107px;
+    font-size: 12px;
 
     span{
-      margin: 9px;
+      margin-bottom: 2.6em;
     }
-    }
+  }
 `;
 
 
 
 export const Gat_container = styled.div`
-  margin-top: 1em;
+  margin-top: .2em;
   width: 100%; 
   display: flex; 
   flex-direction: row;
@@ -348,19 +367,20 @@ export const Resp_Titles = styled.div`
       display: none;
   };
   @media (max-width: 1200px) {
-    width: 380px;
+    width: 350px;
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: center
     margin-bottom: 1em;
+    
+    font-weight: bold; 
     span{
       display: block;
+      
     };
     div{
-      width: 100px;
-      text-align: center;
-    }
-    
-
+      width: 90px;
+      margin-left: 3em;
+      }
     }
 `;

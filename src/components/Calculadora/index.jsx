@@ -254,7 +254,7 @@ function Calculadora() {
                           
               {dataReinversion.map((data, i) => (
                   
-                  <Results_container>
+                  <Results_container className="results-container">
                    
                    
                     <Investment_period className="investment-period" >{data.Plazo}</Investment_period>
