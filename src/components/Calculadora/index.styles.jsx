@@ -355,15 +355,18 @@ export const Gat_title = styled.div`
   flex-wrap: wrap;
   line-height: 1.3; 
   
- @media (max-width: 1255px) {
-  margin: 0px 15px 5px 65px; 
-  font-weight: bold; 
-  width: 7%;
-  display: flex; 
-  flex-wrap: wrap;
-  line-height: 1.3; 
-  
-    }
+  @media (max-width: 1255px) {
+    margin: 0px 15px 5px 65px; 
+    font-weight: bold; 
+    width: 7%;
+    display: flex; 
+    flex-wrap: wrap;
+    line-height: 1.3; 
+
+    .helpText {
+      text-align: start;
+      }
+    };
 `;
 
 
@@ -374,12 +377,12 @@ export const Gat_item = styled.div`
   height: 5%;
 
   @media (max-width: 1255px) {
-  margin: 2px 10px 10px 17px; 
- 
-  font-weight: bold; 
-  width: 5%;
-  height: 5%;
-    }
+    margin: 2px 10px 10px 17px; 
+  
+    font-weight: bold; 
+    width: 5%;
+    height: 5%;
+  }
 `;
 
 
@@ -389,9 +392,8 @@ export const Help_text = styled.span`
   flex-direction: column;
   flex-wrap: wrap; 
   text-align: center;
-  
-  
 `;
+
 
 export const SpanLine = styled.span`
   display: block;
