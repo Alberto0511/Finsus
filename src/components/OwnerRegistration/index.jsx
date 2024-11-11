@@ -208,7 +208,7 @@ function Summary(props) {
   const onChangeSelect = (e, id) => {
     setRegisterProperty({
       ...registerProperty,
-      [id]: e,
+      [id]: e.target.value,
     });
   };
 

@@ -13,14 +13,16 @@ export const DivElement = styled.div`
 
 export const CenteredDiv = styled.div`
   display: flex;
+  height: 100vh;
+
+  @media (max-width: 1200px) {
   justify-content: center;
   align-items: center;
-  height: 100vh;
 `;
 
 export const CubeDiv = styled.div`
-  width: 1000px;
-  height: 600px;
+  width: 100%;
+  height: 60%;
   display: flex;
   flex-direction: column;
   padding: 20px;
@@ -196,9 +198,12 @@ export const ClassStyleButtonOwner = styled.button`
     disabled &&
     `
     background: #f0f0f0 !important; 
-    color: #b8b8b8 !important; 
-    border: 1px solid #ccc !important; 
+    color: #f0f0f0 !important;
+    border: 0px solid #ccc !important; 
     cursor: not-allowed; 
+    &:hover {
+      background: #f0f0f0 !important;
+    }
   `}
 `;
 

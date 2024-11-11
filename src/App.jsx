@@ -1,13 +1,13 @@
 import React from "react";
 
-import Owner from "./components/Calculadora/index";
+import Owner from "./components/OwnerRegistration/index";
 
 // import "./App.css";
 
 function App() {
   return (
     <>
-      <Owner />
+      <Owner/>
     </>
   );
 }
