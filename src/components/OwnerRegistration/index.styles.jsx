@@ -13,7 +13,7 @@ export const DivElement = styled.div`
 
 export const CenteredDiv = styled.div`
   display: flex;
-  height: 100vh;
+  height: 100%;
 
   @media (max-width: 1200px) {
   justify-content: center;
@@ -22,7 +22,7 @@ export const CenteredDiv = styled.div`
 
 export const CubeDiv = styled.div`
   width: 100%;
-  height: 60%;
+  height: 50%;
   display: flex;
   flex-direction: column;
   padding: 20px;
